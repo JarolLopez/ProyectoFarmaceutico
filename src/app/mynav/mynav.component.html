@@ -1,0 +1,47 @@
+<mat-sidenav-container class="sidenav-container" style="background-color: #ede7f6">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="!(isHandset$ | async)">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/inicio"><mat-icon  class="color">home</mat-icon>Inicio</a>
+      <!--<mat-list>
+        <mat-list-item>
+          <mat-icon class="color">store</mat-icon>Productos
+          <button mat-button mat-icon-button (click)="showSubmenu = !showSubmenu">
+            <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}">expand_more</mat-icon>
+          </button>
+        </mat-list-item>
+        <div class="submenu" [ngClass]="{'expanded' : showSubmenu}">
+          <mat-list-item routerLink="/productos">VerProductos</mat-list-item>
+          <mat-list-item>Submenu Item 2</mat-list-item>
+          <mat-list-item>Submenu Item 3</mat-list-item>
+        </div>
+      </mat-list>-->
+
+      <a mat-list-item routerLink="/productos"><mat-icon class="color">store</mat-icon>Productos</a>
+      <a mat-list-item routerLink="/compras"><mat-icon class="color">local_grocery_store</mat-icon>Compras</a>
+      <a mat-list-item routerLink="/ventas"><mat-icon class="color">attach_money</mat-icon>Ventas</a>
+      <a mat-list-item routerLink="/foro"><mat-icon class="color">forum</mat-icon>Foro</a>
+      <a mat-list-item routerLink="/noticias"><mat-icon class="color">local_library</mat-icon>Noticias</a>
+      <a mat-list-item routerLink="/contacto"><mat-icon class="color">contacts</mat-icon>Contacto</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>SISFARM</span>
+      <a mat-list-item routerLink="/login"><mat-icon class="login">account_circle</mat-icon>Iniciar Sesión</a>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
