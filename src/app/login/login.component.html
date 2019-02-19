@@ -1,3 +1,13 @@
-<p>
-  Para iniciar sesion debes crear los formularios
-</p>
+<br>
+<form class="example-form"style="
+border: 3px blue ridge;background-color:white">
+ <h4 style="text-align:center;">Correo</h4>
+   <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="Correo"></textarea>
+    </mat-form-field>
+    <h4 style="text-align:center;">Contraseña</h4>
+    <mat-form-field>
+        <input matInput placeholder="Contraseña" [type]="hide ? 'password' : 'text'">
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </mat-form-field>
+  </form>

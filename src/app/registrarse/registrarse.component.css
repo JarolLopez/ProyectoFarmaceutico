@@ -1,0 +1,30 @@
+.example-form {
+
+     padding:2px;
+   cursor:pointer;
+   display:block;
+   width:450px;
+   
+   
+   
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  .mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }
+  .example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
+}
+
+.example-button-row {
+    float:none;
+    text-align:center;
+}
+.titulo {
+   text-align:center;
+}
+

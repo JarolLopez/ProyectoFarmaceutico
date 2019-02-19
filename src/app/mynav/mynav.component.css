@@ -23,8 +23,13 @@ padding: 10px;
 
 .login
 {
-  left: 40 px;
+  
   color: black;
+  height: 50px;
+  width: 100%;
+padding-left: 400px;
+  font-size: 50px;
+  
 }
 
 
@@ -42,4 +47,11 @@ padding: 10px;
 }
 .submenu.expanded {
   height: 144px;
+}
+
+
+.account_circle{
+  height: 144px;
+  width: 50%;
+    margin: 0 auto;
 }

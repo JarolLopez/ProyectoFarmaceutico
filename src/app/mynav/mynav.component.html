@@ -5,6 +5,7 @@
       [opened]="!(isHandset$ | async)">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
+        <a mat-list-item routerLink=""><mat-icon  class="color">home</mat-icon>Inicio</a>
       <a mat-list-item routerLink="/inicio"><mat-icon  class="color">home</mat-icon>Inicio</a>
       <!--<mat-list>
         <mat-list-item>
@@ -23,9 +24,7 @@
       <a mat-list-item routerLink="/productos"><mat-icon class="color">store</mat-icon>Productos</a>
       <a mat-list-item routerLink="/compras"><mat-icon class="color">local_grocery_store</mat-icon>Compras</a>
       <a mat-list-item routerLink="/ventas"><mat-icon class="color">attach_money</mat-icon>Ventas</a>
-      <a mat-list-item routerLink="/foro"><mat-icon class="color">forum</mat-icon>Foro</a>
-      <a mat-list-item routerLink="/noticias"><mat-icon class="color">local_library</mat-icon>Noticias</a>
-      <a mat-list-item routerLink="/contacto"><mat-icon class="color">contacts</mat-icon>Contacto</a>
+      <a mat-list-item routerLink="/registrarse"><mat-icon class="color">attach_money</mat-icon>Registrarse</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -39,7 +38,21 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>SISFARM</span>
-      <a mat-list-item routerLink="/login"><mat-icon class="login">account_circle</mat-icon>Iniciar Sesión</a>
+      <br>
+      <a mat-list-item routerLink="/login"><mat-icon class="login">account_circle</mat-icon></a>
+      
+      <button mat-raised-button icon-class="account_circle"
+        
+        aria-label="Button that displays a tooltip when focused or hovered over" href="/login">
+        <button mat-mini-fab color="primary" (click)="fn()">
+          <span matTooltip="iniciar sesion">
+            <i class="material-icons">account_circle</i>
+          </span>
+        </button>
+ 
+      </button>
+
+
     </mat-toolbar>
     <!-- Add Content Here -->
     <ng-content></ng-content>

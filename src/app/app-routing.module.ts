@@ -7,9 +7,9 @@ import { ProductosComponent } from './productos/productos.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { NoticiasComponent } from './noticias/noticias.component';
 import { RegistrarseComponent } from './registrarse/registrarse.component';
-import { ForoComponent } from './foro/foro.component';
 import { VentasComponent } from './ventas/ventas.component';
 import { ComprasComponent } from './compras/compras.component';
+import { ComentariosComponent } from './comentarios/comentarios.component';
 
 const routes: Routes = [
   {path: '', component: InicioComponent},
@@ -20,9 +20,9 @@ const routes: Routes = [
   {path: 'productos', component: ProductosComponent},
   {path: 'pedidos', component: PedidosComponent},
   {path: 'noticias', component: NoticiasComponent},
-  {path: 'foro', component: ForoComponent},
   {path: 'ventas', component: VentasComponent},
   {path: 'compras', component: ComprasComponent},
+  {path: 'comentarios', component: ComentariosComponent},
   {path: '**', component: InicioComponent}
 ];
 
