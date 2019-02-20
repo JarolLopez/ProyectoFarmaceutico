@@ -1,11 +1,11 @@
 .example-form {
 
-     padding:2px;
-   cursor:pointer;
-   display:block;
-   width:450px;
-   
-   
+  padding:5px;
+  cursor:pointer;
+  display:block;
+  width:500px;
+  margin: 0 auto;
+  text-align:left;
    
   }
   
@@ -27,4 +27,3 @@
 .titulo {
    text-align:center;
 }
-

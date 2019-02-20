@@ -1,29 +1,26 @@
-<br>
-
-<form class="example-form"style="
-  border: 2px blue ridge;background-color:white">
+<form class="example-form" style="border: 2px blue ridge;background-color:white">
   
   <h4 style="text-align:center;color:blue;">Crear tu cuenta</h4>
     <mat-form-field class="example-full-width">
-        <input matInput placeholder="Correo Electronico" value="">
+        <input class= "example-form" matInput placeholder="Correo Electronico" value="">
     </mat-form-field>
   
     <mat-form-field class="example-full-width">
-        <textarea matInput placeholder="Confirmar Correo"></textarea>
+        <textarea class= "example-form"  matInput placeholder="Confirmar Correo"></textarea>
     </mat-form-field>
 
     <mat-form-field>
-        <input matInput placeholder="Contraseña" [type]="hide ? 'password' : 'text'">
+        <input class= "example-form" matInput placeholder="Contraseña" [type]="hide ? 'password' : 'text'">
         <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </mat-form-field>
 
     <mat-form-field class="example-full-width ">
-    <textarea matInput placeholder="¿Como te llamas?" ></textarea>
+    <textarea class= "example-form" matInput placeholder="¿Como te llamas?" ></textarea>
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
         <span matPrefix>+505 &nbsp;</span>
-        <input type="tel" matInput placeholder="Telephone">
+        <input class= "example-form" type="tel" matInput placeholder="Telephone">
         <mat-icon matSuffix>mode_edit</mat-icon>
     </mat-form-field>
 
@@ -32,7 +29,7 @@
         <h3>Sexo</h3>
         <mat-radio-button value="1">Masculino</mat-radio-button>
         <mat-radio-button value="2">Femenino</mat-radio-button>
-        <mat-radio-button value="3">No vinario</mat-radio-button>
+        <mat-radio-button value="3">Otro</mat-radio-button>
       </mat-radio-group>
 
       <div class="example-button-row">
