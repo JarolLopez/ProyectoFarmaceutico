@@ -1,11 +1,10 @@
-<mat-sidenav-container class="sidenav-container" style="background-color: #ede7f6">
+<mat-sidenav-container class="sidenav-container" style="background-color: rgb(255, 239, 209)">
   <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="!(isHandset$ | async)">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-        <a mat-list-item routerLink=""><mat-icon  class="color">home</mat-icon>Inicio</a>
       <a mat-list-item routerLink="/inicio"><mat-icon  class="color">home</mat-icon>Inicio</a>
       <!--<mat-list>
         <mat-list-item>
@@ -22,8 +21,11 @@
       </mat-list>-->
 
       <a mat-list-item routerLink="/productos"><mat-icon class="color">store</mat-icon>Productos</a>
-      <a mat-list-item routerLink="/compras"><mat-icon class="color">local_grocery_store</mat-icon>Compras</a>
+      <a mat-list-item routerLink="/comentarios"><mat-icon class="color">store</mat-icon>Comentarios</a>
+      <a mat-list-item routerLink="/pedidos"><mat-icon class="color">local_grocery_store</mat-icon>Pedidos</a>
       <a mat-list-item routerLink="/ventas"><mat-icon class="color">attach_money</mat-icon>Ventas</a>
+      <a mat-list-item routerLink="/compras"><mat-icon class="color">attach_money</mat-icon>Compras</a>
+      <a mat-list-item routerLink="/usuarios"><mat-icon class="color">attach_money</mat-icon>Usuarios</a>
       <a mat-list-item routerLink="/registrarse"><mat-icon class="color">attach_money</mat-icon>Registrarse</a>
     </mat-nav-list>
   </mat-sidenav>

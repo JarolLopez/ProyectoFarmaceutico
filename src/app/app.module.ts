@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {MatInputModule} from '@angular/material/input';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatCardModule} from '@angular/material/card';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +21,7 @@ import { RegistrarseComponent } from './registrarse/registrarse.component';
 import { VentasComponent } from './ventas/ventas.component';
 import { ComprasComponent } from './compras/compras.component';
 import { ComentariosComponent } from './comentarios/comentarios.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { ComentariosComponent } from './comentarios/comentarios.component';
     VentasComponent,
     ComprasComponent,
     ComentariosComponent,
+    UsuariosComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,8 @@ import { ComentariosComponent } from './comentarios/comentarios.component';
     MatInputModule,
     MatFormFieldModule,
     MatRadioModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
