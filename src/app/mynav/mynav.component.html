@@ -29,7 +29,7 @@
       <a mat-list-item routerLink="/registrarse"><mat-icon class="color">attach_money</mat-icon>Registrarse</a>
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content>
+  <mat-sidenav-content fixedInViewport="true">
     <mat-toolbar color="primary">
       <button
         type="button"
@@ -39,14 +39,13 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>SISFARM</span>
+      <span class="Span">SISFARM</span>
       <br>
-      <a mat-list-item routerLink="/login"><mat-icon class="login">account_circle</mat-icon></a>
       
       <button mat-raised-button icon-class="account_circle"
         
-        aria-label="Button that displays a tooltip when focused or hovered over" href="/login">
-        <button mat-mini-fab color="primary" (click)="fn()">
+        aria-label="Button that displays a tooltip when focused or hovered over" routerLink="login">
+        <button class="botoncuenta" mat-mini-fab (click)="fn()">
           <span matTooltip="iniciar sesion">
             <i class="material-icons">account_circle</i>
           </span>

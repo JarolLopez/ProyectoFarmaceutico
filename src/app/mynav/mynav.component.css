@@ -33,7 +33,7 @@ padding: 10px;
   color: black;
   height: 50px;
   width: 100%;
-padding-left: 400px;
+padding: 0 14px;
   font-size: 50px;
   
 }
@@ -60,4 +60,8 @@ padding-left: 400px;
   height: 144px;
   width: 50%;
     margin: 0 auto;
+    color: blue;
+}
+.Span{
+  width: 100%;
 }
