@@ -1,8 +1,6 @@
-<<<<<<< HEAD
 <p>
  
 </p>
-=======
 <h3>Productos</h3>
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
@@ -47,9 +45,8 @@
     <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
   </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"
       (click)="selection.toggle(row)">
   </tr>
 </table>
->>>>>>> a9ec852da5863b5cf92b3233e3eadedc69e70b8b
