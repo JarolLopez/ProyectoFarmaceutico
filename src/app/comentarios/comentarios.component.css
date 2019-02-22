@@ -1,9 +1,23 @@
-.example-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-  }
+.mymad{
+  min-width: 150px;
+  max-width: 500px;
+  display: block;
+  padding: 10px ;
+  text-align: center;
+  width: 400px;
+  height: 250px;
+  margin: 0 auto;
+  position: relative;
+  top: 100px;
+}
+
+.example-full-width{
+  height: 150px;
+  width: 300px;
   
-  .example-full-width {
-    width: 100%;
-  }
+
+}
+
+.mymad:hover{
+  box-shadow:0px 0px 22px 9px rgb(245, 130, 187);
+}

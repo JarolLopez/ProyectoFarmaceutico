@@ -1,12 +1,11 @@
-.example-form {
+.mymad{
 
   padding:5px;
   cursor:pointer;
   display:block;
   width:500px;
   margin: 0 auto;
-  text-align:left;
-   
+  text-align:left; 
   }
   
   .example-full-width {
@@ -26,4 +25,7 @@
 }
 .titulo {
    text-align:center;
+}
+.mymad:hover{
+  box-shadow:0px 0px 22px 9px rgb(245, 130, 187);
 }
