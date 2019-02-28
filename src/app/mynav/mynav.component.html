@@ -5,7 +5,7 @@
       [opened]="!(isHandset$ | async)">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="/inicio"><mat-icon  class="color">home</mat-icon>Inicio</a>
+      <a mat-list-item class="listBord" routerLink="/inicio"><mat-icon  class="color">home</mat-icon>Inicio</a>
       <!--<mat-list>
         <mat-list-item>
           <mat-icon class="color">store</mat-icon>Productos
@@ -20,12 +20,12 @@
         </div>
       </mat-list>-->
 
-      <a mat-list-item routerLink="/productos"><mat-icon class="color">local_parking</mat-icon>Productos</a>
-      <a mat-list-item routerLink="/comentarios"><mat-icon class="color">store</mat-icon>Comentarios</a>
-      <a mat-list-item routerLink="/pedidos"><mat-icon class="color">healing</mat-icon>Pedidos</a>
-      <a mat-list-item routerLink="/ventas"><mat-icon class="color">attach_money</mat-icon>Ventas</a>
+      <a mat-list-item class="listBord" routerLink="/productos"><mat-icon class="color">local_parking</mat-icon>Productos</a>
+      <a mat-list-item class="listBord" routerLink="/comentarios"><mat-icon class="color">store</mat-icon>Comentarios</a>
+      <a mat-list-item class="listBord" routerLink="/pedidos"><mat-icon class="color">healing</mat-icon>Pedidos</a>
+      <a mat-list-item class="listBord" routerLink="/ventas"><mat-icon class="color">attach_money</mat-icon>Ventas</a>
      <!-- <a mat-list-item routerLink="/compras"><mat-icon class="color">attach_money</mat-icon>Compras</a>-->
-      <a mat-list-item routerLink="/usuarios"><mat-icon class="color">person_pin</mat-icon>Usuarios</a>
+      <a mat-list-item class="listBord" routerLink="/usuarios"><mat-icon class="color">person_pin</mat-icon>Usuarios</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content fixedInViewport="true">
@@ -38,7 +38,9 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span class="Span">SISFARM</span>
+      <span class="Span">
+        <img class="logo" src="./../../assets/Imagenes/logotipo.png">
+      </span>
       <br>
             
             <a mat-list-item routerLink="/login"><mat-icon class="Init" matTooltip="Iniciar Sesión">account_circle</mat-icon></a>

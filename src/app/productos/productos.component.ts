@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
 import { Chain } from '@angular/compiler';
 import { Pipe, PipeTransform} from '@angular/core';
-import {MatPaginator, MatSort,} from '@angular/material';
-
+import {MatPaginator, MatSort} from '@angular/material';
+import { AgregarproducutoComponent } from '../agregarproducuto/agregarproducuto.component';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDialogConfig} from '@angular/material';
+import { LoginComponent } from '../login/login.component';
 
 export interface PeriodicElement {
   name: string;
@@ -36,9 +38,18 @@ export class ProductosComponent implements OnInit {
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-  constructor() { }
+  constructor(
+    public dialog: MatDialog
+  ) { }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(AgregarproducutoComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 
   ngOnInit() {
   }
-
 }

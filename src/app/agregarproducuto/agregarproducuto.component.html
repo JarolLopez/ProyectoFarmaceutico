@@ -1,0 +1,40 @@
+<mat-card class="mymad">
+  <form class="example-form">
+    
+    <h4 style="text-align:center;color:blue;">Agregar un nuevo producto</h4>
+
+      <mat-select placeholder="Presentación">
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+      </mat-select>
+
+      <mat-form-field class="example-full-width">
+        <input type="text" class= "example-form" matInput placeholder="Nombre del producto" value="">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+          <input type="text" class= "example-form" matInput placeholder="Descripción del producto" value="">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+    
+      <mat-form-field class="example-full-width">
+        <input type="number" class= "example-form"  matInput placeholder="Precio unitario">
+      </mat-form-field>
+  
+      <mat-form-field class="example-full-width">
+        <input type="number" class= "example-form"  matInput placeholder="Precio total del lote">
+    </mat-form-field>
+
+    <button type="submit">Guardar</button>
+    </form>
+    </mat-card>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>
