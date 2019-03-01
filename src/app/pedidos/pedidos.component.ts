@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
 import { Chain } from '@angular/compiler';
 import { Pipe, PipeTransform} from '@angular/core';
-import {MatPaginator, MatSort} from '@angular/material';
-
 
 export interface PeriodicElement {
   name: string;
