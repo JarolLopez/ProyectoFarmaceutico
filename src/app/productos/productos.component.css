@@ -1,5 +1,7 @@
 /* Structure */
+/* Structure */
 table {
+<<<<<<< HEAD
   width: 100%;
 }
 .mat-raised-button
@@ -9,10 +11,49 @@ table {
   top: 3px;
   bottom: 3px;
   height: 50px;
+=======
+  width: 95%;
+  position: relative;
+  left:2.5%;
+  font-size: 16px;
+  top:18px;
+background-color:#ECEFF1;
+  
 }
 
 .mat-form-field {
-  font-size: 14px;
-  width: 20%;
-  padding-left:700px;
+ 
+    font-size: 15px;
+    width: 20%;
+   padding-left:700px;
+  
+  margin-top:3px; 
+ 
+  }
+
+
+
+.buttom{
+ 
+   background-color:navy;
+  
+  
+>>>>>>> 838ad094b4dc355c1deea5a2453a834a42f92b59
 }
+
+
+
+
+ .pagi{
+  width: 250px;
+  left: 12%;
+  margin: 0 auto;
+  padding: 2px;
+  height: 45px;
+  min-width: 50px;
+  max-width: 1090px;
+  width: 100%;
+  background-color:grey; 
+ 
+
+ }

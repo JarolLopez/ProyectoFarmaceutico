@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
+<<<<<<< HEAD
 import { Chain } from '@angular/compiler';
 import { Pipe, PipeTransform} from '@angular/core';
+=======
+
+>>>>>>> 838ad094b4dc355c1deea5a2453a834a42f92b59
 
 export interface PeriodicElement {
   name: string;

@@ -14,7 +14,7 @@
     height: 350px;
     margin: 0 auto;
     position: relative;
-    top: 100px;
+    top: 10px;
   }
 
   .imglog{
@@ -24,4 +24,17 @@
 
   .mymad:hover{
     box-shadow:0px 0px 22px 9px rgb(245, 130, 187);
+    
   }
+
+  .logo{
+    top: 1px;
+    min-width: 150px;
+    max-width: 200px;  
+    position: relative;
+    padding: 2%;
+    width: 90px;
+    height: 90px;
+    margin: 0 auto;
+    left: 466px;
+}
