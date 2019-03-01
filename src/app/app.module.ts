@@ -78,6 +78,6 @@ import { AgregarproducutoComponent } from './agregarproducuto/agregarproducuto.c
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [AgregarproducutoComponent, ProductosComponent]
+  entryComponents: [AgregarproducutoComponent, ProductosComponent, RegistrarseComponent]
 })
 export class AppModule { }

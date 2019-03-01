@@ -1,9 +1,7 @@
 /* Structure */
+/* Structure */
 table {
   width: 100%;
- 
-
-
 }
 .mat-raised-button
 {
@@ -14,8 +12,19 @@ table {
   height: 50px;
 }
 
-.mat-form-field {
-  font-size: 14px;
-  width: 20%;
-  padding-left:700px;
-}
+
+
+
+ .pagi{
+  width: 250px;
+  left: 12%;
+  margin: 0 auto;
+  padding: 2px;
+  height: 45px;
+  min-width: 50px;
+  max-width: 1090px;
+  width: 100%;
+  background-color:grey; 
+ 
+
+ }

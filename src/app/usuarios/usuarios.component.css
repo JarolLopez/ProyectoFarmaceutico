@@ -1,3 +1,21 @@
 table {
-    width: 100%;
+    width: 95%;
+    position: relative;
+    left: 2.5%;
+    font-size: 16px;
+    top: 18px;
   }
+ .mat-raised-button
+ {
+   padding: 6px;
+   left: 2.5%;
+   top: 3px;
+   bottom: 3px;
+   height: 50px;
+ }
+ 
+ .mat-form-field {
+   font-size: 16px;
+   width: 30%;
+   padding-left: 10%;
+ }
