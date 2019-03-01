@@ -3,32 +3,32 @@
     
     <h4 style="text-align:center;color:blue;">Agregar un nuevo producto</h4>
 
-      <mat-select placeholder="Presentación">
+      <mat-select placeholder="">
           <mat-option *ngFor="let food of foods" [value]="food.value">
             {{food.viewValue}}
           </mat-option>
       </mat-select>
 
       <mat-form-field class="example-full-width">
-        <input type="text" class= "example-form" matInput placeholder="Nombre del producto" value="">
+        <input  [(ngModel)]="pass" name="NombreP" required  placeholder="NombreP" type="producto"class= "example-form" matInput placeholder="Nombre del producto" value="">
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-          <input type="text" class= "example-form" matInput placeholder="Descripción del producto" value="">
+          <input  [(ngModel)]="pass" name="DescriP" required  placeholder="DescriP" type="Descrip" class= "example-form" matInput placeholder="Descripción del producto" value="">
         </mat-form-field>
 
         <mat-form-field>
-            <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+            <input [(ngModel)]="fecha" name="fecha" required  placeholder="fecha" matInput [matDatepicker]="picker" placeholder="Choose a date">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
     
       <mat-form-field class="example-full-width">
-        <input type="number" class= "example-form"  matInput placeholder="Precio unitario">
+        <input  [(ngModel)]="PrecioU" name="pass" required  placeholder="PrecioU" type="text"  type="PrecioU" class= "example-form"  matInput placeholder="Precio unitario">
       </mat-form-field>
   
       <mat-form-field class="example-full-width">
-        <input type="number" class= "example-form"  matInput placeholder="Precio total del lote">
+        <input  [(ngModel)]="precioL" name="pass" required  placeholder="PrecioL" type="text"  type="precioL" class= "example-form"  matInput placeholder="Precio total del lote">
     </mat-form-field>
 
     <button type="submit">Guardar</button>
