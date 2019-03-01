@@ -9,6 +9,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule, MatNativeDateModule} from '@angular/material';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms'
 
 
 
@@ -72,7 +73,8 @@ import { AgregarproducutoComponent } from './agregarproducuto/agregarproducuto.c
     MatDialogModule,
     MatSelectModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    FormsModule,ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
