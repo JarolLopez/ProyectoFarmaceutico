@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
 import { Chain } from '@angular/compiler';
 import { Pipe, PipeTransform} from '@angular/core';
@@ -35,6 +35,10 @@ export class ProductosComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
+
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
@@ -51,5 +55,6 @@ export class ProductosComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.dataSource.paginator = this.paginator;
   }
 }

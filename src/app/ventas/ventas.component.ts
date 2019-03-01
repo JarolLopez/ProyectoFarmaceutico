@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
-
+import {MatPaginator, MatSort} from '@angular/material';
 
 export interface PeriodicElement {
   name: string;
@@ -31,14 +31,14 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class VentasComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
-
+  @ViewChild(MatPaginator) paginator: MatPaginator;
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() {  this.dataSource.paginator = this.paginator;
   }
 
 }
