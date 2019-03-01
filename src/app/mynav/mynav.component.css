@@ -6,19 +6,19 @@
 
 .sidenav {
   width: 200px;
-  background: rgb(149, 243, 149);
+  background: rgb(139, 231, 151);
   border: inset black 0.6px;
 }
 
 .sidenav .mat-toolbar {
-  background: rgb(149, 243, 149);
+  background: rgb(139, 231, 151);
   border-bottom: 1px solid;
   border-radius: 4%;
 }
 
 .sidenav .mat-nav-list
 {
-  background: rgb(175, 230, 175);
+  background: rgb(139, 231, 151);
   padding: 0px;
 }
 
@@ -80,9 +80,8 @@ padding: 0 14px;
 }
 
 .mat-toolbar.mat-primary{
-  background: rgb(149, 243, 149);
+  background: rgb(75, 120, 245);
 }
-
 .Init{
   color: black;
   font-size: 40px;
