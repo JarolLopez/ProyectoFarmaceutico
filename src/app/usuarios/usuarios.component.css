@@ -3,10 +3,12 @@ table {
   position: relative;
   left:2.5%;
   font-size: 16px;
-  top:10px;
+  top:18px;
   background-color:#ECEFF1;
   border-radius: 12px;
 }
+
+
 
 
 .mat-raised-button
@@ -26,7 +28,7 @@ table {
   left:2.5%;
   font-size: 16px;
   top:18px;
-  background-color:white;
+  background-color:#ECEFF1;
 }
  
 .mat-form-field {
