@@ -4,25 +4,34 @@
   
   <h4 style="text-align:center;color:blue;">Crear tu cuenta</h4>
     <mat-form-field class="example-full-width">
-        <input class= "example-form" matInput placeholder="Correo Electronico" value="">
+        <input [(ngModel)]="inputC" name="inputC" [formControl]="emailFormControl" type="email" required placeholder="correo"class= "example-form" matInput placeholder="Correo Electronico" value="">
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+      
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
     </mat-form-field>
   
-    <mat-form-field class="example-full-width">
-        <textarea class= "example-form"  matInput placeholder="Confirmar Correo"></textarea>
-    </mat-form-field>
+   
 
     <mat-form-field>
-        <input class= "example-form" matInput placeholder="Contraseña" [type]="hide ? 'password' : 'text'">
-        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        <input [(ngModel)]="pass" name="pass" required  placeholder="password"  class= "example-form" matInput placeholder="Contraseña" [type]="hide ? 'password' : 'text'">
+      
         </mat-form-field>
 
+        <mat-form-field>
+            <input [(ngModel)]="pass" name="pass" required  placeholder="password" class= "example-form" matInput placeholder=" Confirmar Contraseña" [type]="hide ? 'password' : 'text'">
+            </mat-form-field>
+
     <mat-form-field class="example-full-width ">
-    <textarea class= "example-form" matInput placeholder="¿Como te llamas?" ></textarea>
+    <textarea [(ngModel)]="nom" name="nom" required  placeholder="nombre"class= "example-form" matInput placeholder="¿Como te llamas?" ></textarea>
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
         <span matPrefix>+505 &nbsp;</span>
-        <input class= "example-form" type="tel" matInput placeholder="Telephone">
+        <input [(ngModel)]="num" name="num" required  placeholder="numero" class= "example-form" type="tel" matInput placeholder="Telephone">
         <mat-icon matSuffix>mode_edit</mat-icon>
     </mat-form-field>
 
