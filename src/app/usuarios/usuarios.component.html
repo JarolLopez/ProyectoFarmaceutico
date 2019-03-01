@@ -1,6 +1,6 @@
-<h3>Usuarios</h3>
 
-<button mat-raised-button (click)="openDialog()"
+<br>
+<button   color="primary" mat-raised-button (click)="openDialog()"
 ><mat-icon>add</mat-icon>Usuario</button>
 
 <mat-form-field>
@@ -39,5 +39,8 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
-  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
 </table>
+<mat-paginator  class="paginator" [length]="100"
+[pageSize]="10"
+[pageSizeOptions]="[5, 10, 25, 100]">
+</mat-paginator>  <br> <div><br></div>

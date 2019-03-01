@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild} from '@angular/core';
 import {MatTableDataSource} from '@angular/material';
 import {MatDialog} from '@angular/material';
 import {MatPaginator, MatSort} from '@angular/material';
@@ -35,7 +35,7 @@ export class UsuariosComponent implements OnInit {
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-
+  @ViewChild(MatPaginator) paginator: MatPaginator;
   constructor(public dialog: MatDialog) { }
 
   openDialog() {
@@ -46,6 +46,7 @@ export class UsuariosComponent implements OnInit {
     });
   }
   ngOnInit() {
+    this.dataSource.paginator = this.paginator;
   }
 
 }
