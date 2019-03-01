@@ -1,10 +1,11 @@
-
+<br>
 <button class="buttom"  color="primary" mat-raised-button (click)="openDialog()"
 ><mat-icon class="buttom">add</mat-icon>Productos</button>
 
-<mat-form-field >
+<mat-form-field>
   <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
 </mat-form-field>
+
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" >
 
