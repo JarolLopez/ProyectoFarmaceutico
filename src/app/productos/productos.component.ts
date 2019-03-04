@@ -7,12 +7,14 @@ import { AgregarproducutoComponent } from '../agregarproducuto/agregarproducuto.
 import {PresentacionComponent} from '../presentacion/presentacion.component';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDialogConfig} from '@angular/material';
 import { LoginComponent } from '../login/login.component';
+import {MatIconModule} from '@angular/material/icon';
 
 export interface PeriodicElement {
   name: string;
   position: number;
   weight: number;
   symbol: string;
+  
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
@@ -33,7 +35,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./productos.component.css']
 })
 export class ProductosComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol','accion'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
 

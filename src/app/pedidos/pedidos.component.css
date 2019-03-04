@@ -11,6 +11,11 @@ table {
   border-radius: 12px;
 }
 
+
+.ng-container{
+color:black;
+}
+
  
 .mat-form-field {
   
@@ -38,5 +43,10 @@ table {
 }
 
 
+.estado
+{
 
+   border-radius: 4px;
+  
+}
 

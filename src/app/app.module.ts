@@ -8,7 +8,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
-import {MatDatepickerModule, MatNativeDateModule} from '@angular/material';
+import {MatDatepickerModule, MatNativeDateModule, MatSlideToggleModule} from '@angular/material';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms'
 
 
@@ -76,7 +76,8 @@ import { PresentacionComponent } from './presentacion/presentacion.component';
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    FormsModule,ReactiveFormsModule
+    FormsModule,ReactiveFormsModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent],
