@@ -1,14 +1,15 @@
 <br>
-<button class="buttom"  color="primary" mat-raised-button (click)="openDialog()"
+<button class="buttom1"  color="primary" mat-raised-button (click)="openDialog()"
 ><mat-icon class="buttom">add</mat-icon>Productos</button>
 
-<button class="buttom"  color="primary" mat-raised-button (click)="openDialog1()"
-><mat-icon class="buttom">add</mat-icon>Presentación</button>
+
 
 <mat-form-field>
   <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
 </mat-form-field>
 
+<button class="buttom2"  color="primary" mat-raised-button (click)="openDialog1()"
+><mat-icon class="buttom">add</mat-icon>Presentación</button>
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" >
 
