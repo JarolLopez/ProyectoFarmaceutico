@@ -1,21 +1,46 @@
 table {
-    width: 95%;
-    position: relative;
-    left: 2.5%;
-    font-size: 16px;
-    top: 18px;
-  }
- .mat-raised-button
- {
-   padding: 6px;
-   left: 2.5%;
-   top: 3px;
-   bottom: 3px;
-   height: 50px;
- }
+  width: 95%;
+  position: relative;
+  left:2.5%;
+  font-size: 16px;
+  top:18px;
+  background-color:#ECEFF1;
+  border-radius: 12px;
+}
+
+
+
+
+.mat-raised-button
+{
+  padding: 6px;
+  left: 2.5%;
+  top: 4px;
+  bottom: 3px;
+  height: 50px;
+  border-radius: 12px;
+}
+
+.paginator
+{
+  width: 95%;
+  position: relative;
+  left:2.5%;
+  font-size: 16px;
+  top:18px;
+  background-color:#ECEFF1;
+  border-radius: 12px;
+}
  
- .mat-form-field {
-   font-size: 16px;
-   width: 30%;
-   padding-left: 10%;
- }
+.mat-form-field {
+  
+  width: 86%;
+  left: 3%;
+  border-radius: 12px;
+  position: relative;
+  font-size: 16px;
+  top:2px;
+  background-color:#ECEFF1;
+}
+
+  

@@ -33,6 +33,7 @@ import { ComprasComponent } from './compras/compras.component';
 import { ComentariosComponent } from './comentarios/comentarios.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { AgregarproducutoComponent } from './agregarproducuto/agregarproducuto.component';
+import { PresentacionComponent } from './presentacion/presentacion.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { AgregarproducutoComponent } from './agregarproducuto/agregarproducuto.c
     ComprasComponent,
     ComentariosComponent,
     UsuariosComponent,
-    AgregarproducutoComponent
+    AgregarproducutoComponent,
+    PresentacionComponent
   ],
   imports: [
     BrowserModule,
@@ -78,6 +80,6 @@ import { AgregarproducutoComponent } from './agregarproducuto/agregarproducuto.c
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [AgregarproducutoComponent, ProductosComponent, RegistrarseComponent]
+  entryComponents: [AgregarproducutoComponent, ProductosComponent, RegistrarseComponent, PresentacionComponent]
 })
 export class AppModule { }

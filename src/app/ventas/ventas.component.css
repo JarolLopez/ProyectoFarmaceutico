@@ -7,22 +7,24 @@ table {
   background-color:#ECEFF1;
 }
 
+ 
 .mat-form-field {
-  left:10px ;
+  
+  width: 94%;
+  left: 3%;
+  border-radius: 12px;
+  position: relative;
+  font-size: 16px;
+  top:2px;
+  background-color:#ECEFF1;
 }
 
-
-
-.pagi{
-  width: 250px;
-  left: 12%;
-  margin: 0 auto;
-  padding: 2px;
-  height: 45px;
-  min-width: 50px;
-  max-width: 1090px;
-  width: 100%;
-  background-color:grey; 
- 
-
- }
+.paginator
+{
+  width: 95%;
+  position: relative;
+  left:2.5%;
+  font-size: 16px;
+  top:18px;
+  background-color:#ECEFF1;
+}
