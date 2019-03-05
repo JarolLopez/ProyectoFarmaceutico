@@ -10,8 +10,9 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule, MatNativeDateModule} from '@angular/material';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms'
-
-
+import {AngularFireDatabaseModule} from 'angularfire2/database';
+import {AngularFireModule} from 'angularfire2';
+import {environment} from '../environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -76,7 +77,9 @@ import { PresentacionComponent } from './presentacion/presentacion.component';
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    FormsModule,ReactiveFormsModule
+    FormsModule,ReactiveFormsModule,
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent],

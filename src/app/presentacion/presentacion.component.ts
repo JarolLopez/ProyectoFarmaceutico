@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ConexfirebaseService} from '../conexfirebase.service';
 
 @Component({
   selector: 'app-presentacion',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PresentacionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private conexfirebaseservice: ConexfirebaseService) { }
+
+  information: string;
 
   ngOnInit() {
   }
