@@ -8,7 +8,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
-import {MatDatepickerModule, MatNativeDateModule} from '@angular/material';
+import {MatDatepickerModule, MatNativeDateModule, MatSlideToggleModule} from '@angular/material';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms'
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {AngularFireModule} from 'angularfire2';
@@ -79,7 +79,8 @@ import { PresentacionComponent } from './presentacion/presentacion.component';
     MatNativeDateModule,
     FormsModule,ReactiveFormsModule,
     AngularFireDatabaseModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,13 +1,24 @@
+
+  <h4 style="text-align:center;color:blue;">Agregar un nuevo producto</h4>
+  <div><br></div><div><br></div>
+  <button  class="btnpresentacion" color="primary" mat-raised-button (click)="openDialog1()"
+  ><mat-icon class="buttom">add</mat-icon>Presentación</button>
+  
+
 <mat-card class="mymad">
   <form class="example-form">
     
-    <h4 style="text-align:center;color:blue;">Agregar un nuevo producto</h4>
-
-      <mat-select placeholder="">
-          <mat-option *ngFor="let food of foods" [value]="food.value">
-            {{food.viewValue}}
-          </mat-option>
-      </mat-select>
+  
+      
+<h4>seleccionar</h4>
+<mat-form-field>
+  <select matNativeControl required>
+    <option value="acetominifen">Acetominifen</option>
+    <option value="saab">Saab</option>
+    <option value="mercedes">Mercedes</option>
+    <option value="audi">Audi</option>
+  </select>
+</mat-form-field>
 
       <mat-form-field class="example-full-width">
         <input  [(ngModel)]="pass" name="NombreP" required  placeholder="NombreP" type="producto"class= "example-form" matInput placeholder="Nombre del producto" value="">
@@ -31,7 +42,7 @@
         <input  [(ngModel)]="precioL" name="pass" required  placeholder="PrecioL" type="text"  type="precioL" class= "example-form"  matInput placeholder="Precio total del lote">
     </mat-form-field>
 
-    <button type="submit">Guardar</button>
+    <button type="submit" class="btnguardar">Guardar</button>
     </form>
     </mat-card>
 

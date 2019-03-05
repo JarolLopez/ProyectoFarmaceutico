@@ -8,8 +8,19 @@
     text-align:left; 
     }
     
+    .btnpresentacion
+{
+  padding: 1px;
+ margin:15px; 
+  top: 0px;
+  bottom: 0px;
+  height: 50px;
+  border-radius: 12px;
+  
+}
     .example-full-width {
       width: 100%;
+      background-color: #E0E0E0;
     }
     .mat-radio-button ~ .mat-radio-button {
       margin-left: 16px;
@@ -29,3 +40,24 @@
   .mymad:hover{
     box-shadow:0px 0px 22px 9px white;
   }
+  .mat-form-field {
+  
+    width: 85%;
+    left: 3%;
+    border-radius:12px;
+    position: relative;
+    font-size: 16px;
+    top:5px;
+    background-color:#ECEFF1;
+  }
+
+  .btnguardar
+{
+  padding: 6px;
+  left: 2.5%;
+  top: 4px;
+  bottom: 3px;
+  height: 50px;
+  border-radius: 12px;
+  
+}

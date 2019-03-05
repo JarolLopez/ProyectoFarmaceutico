@@ -6,19 +6,19 @@
 
 .sidenav {
   width: 200px;
-  background: rgb(139, 231, 151);
+  background:#E0E0E0;
   border: inset black 0.6px;
 }
 
 .sidenav .mat-toolbar {
-  background: rgb(139, 231, 151);
+  background:#E0E0E0;
   border-bottom: 1px solid;
   border-radius: 4%;
 }
 
 .sidenav .mat-nav-list
 {
-  background: rgb(139, 231, 151);
+  background: #E0E0E0;
   padding: 0px;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .color {
-color: blue;
+color:#1565C0;
 padding: 10px;
 font-size: 25px;
 }
@@ -66,7 +66,7 @@ padding: 0 14px;
   height: 144px;
   width: 50%;
     margin: 0 auto;
-    color: blue;
+    background-color: blue;
 }
 .Span{
   width: 100%;
@@ -80,10 +80,10 @@ padding: 0 14px;
 }
 
 .mat-toolbar.mat-primary{
-  background: rgb(125, 218, 125);
+  background:#1565C0;
 }
 .Init{
-  color: black;
+  color:  #E0E0E0;
   font-size: 40px;
   padding: 0 14px;
 }
@@ -96,4 +96,13 @@ padding: 0 14px;
 .logo{
   width: 80px; height: 60px;
   padding: 2px;
+}
+
+.titulo{
+ text-align:center;
+ margin-right: 40%;
+ color: #E0E0E0;
+
+ 
+
 }

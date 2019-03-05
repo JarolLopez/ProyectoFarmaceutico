@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
 import {MatPaginator, MatSort} from '@angular/material';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 export interface PeriodicElement {
   name: string;
@@ -33,7 +34,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 
 export class PedidosComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol','entregado'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
   @ViewChild(MatPaginator) paginator: MatPaginator;
   applyFilter(filterValue: string) {

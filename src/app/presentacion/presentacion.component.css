@@ -1,0 +1,12 @@
+.imglog{
+    top: 3px;
+    min-width: 150px;
+    max-width: 500px;  
+    text-align: center;
+    padding: 2%;
+    width: 150px;
+    height: 100px;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+}

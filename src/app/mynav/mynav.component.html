@@ -5,6 +5,7 @@
       [opened]="!(isHandset$ | async)">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
+      
       <a mat-list-item class="listBord" routerLink="/inicio"><mat-icon  class="color">home</mat-icon>Inicio</a>
       <!--<mat-list>
         <mat-list-item>
@@ -38,13 +39,17 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
+      
       <span class="Span">
         <img class="logo" src="./../../assets/Imagenes/logotipo.png">
-      </span>
-      <br>
-            
-            <a mat-list-item routerLink="/login"><mat-icon class="Init" matTooltip="Iniciar Sesión">account_circle</mat-icon></a>
+       </span>
 
+       
+          <h2 class="titulo">Farmacia FarmaAhorro</h2>
+     
+ 
+            <a mat-list-item routerLink="/login"><mat-icon class="Init" matTooltip="Iniciar Sesión">account_circle</mat-icon></a>
+           
     </mat-toolbar>
     <!-- Add Content Here -->
     <ng-content></ng-content>
