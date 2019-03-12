@@ -80,7 +80,8 @@ import { PresentacionComponent } from './presentacion/presentacion.component';
     FormsModule,ReactiveFormsModule,
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent],
