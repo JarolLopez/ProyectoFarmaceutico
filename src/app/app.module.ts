@@ -14,6 +14,7 @@ import {AngularFireDatabaseModule} from 'angularfire2/database';
 import { AngularFirestore } from 'angularfire2/firestore';
 import {AngularFireModule} from 'angularfire2';
 import {environment} from '../environments/environment';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -94,6 +95,7 @@ import { ComentarioListComponent } from './comentario-list/comentario-list.compo
     FormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    MatGridListModule
   ],
   providers: [ComentarioService, AngularFirestore],
   bootstrap: [AppComponent],
