@@ -1,13 +1,12 @@
 .mymad{
-
   padding:5px;
   cursor:pointer;
   display:block;
-  width:500px;
+  width: 400px;
   margin: 0 auto;
-  text-align:left; 
+  text-align:left;
+  margin-top: 60px; 
   }
-  
   .example-full-width {
     width: 100%;
   }

@@ -2,7 +2,7 @@
  <mat-card class="mymad">
 <form class="example-form">
   
-  <h4 style="text-align:center;color:blue;">Crear tu cuenta</h4>
+  <h4 style="text-align:center;color:blue;">Crea tu cuenta</h4>
     <mat-form-field class="example-full-width">
         <input [(ngModel)]="inputC" name="inputC" [formControl]="emailFormControl" type="email" required placeholder="correo"class= "example-form" matInput placeholder="Correo Electronico" value="">
         <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
@@ -20,7 +20,7 @@
         <input [(ngModel)]="pass" name="pass" required  placeholder="password"  class= "example-form" matInput placeholder="Contraseña" [type]="hide ? 'password' : 'text'">
       
         </mat-form-field>
-
+<br>
         <mat-form-field>
             <input [(ngModel)]="pass" name="pass" required  placeholder="password" class= "example-form" matInput placeholder=" Confirmar Contraseña" [type]="hide ? 'password' : 'text'">
             </mat-form-field>
@@ -50,7 +50,3 @@
 
   </form>
   </mat-card>
-
-  <mat-dialog-actions align="end">
-    <button mat-button mat-dialog-close>Cancel</button>
-  </mat-dialog-actions>
