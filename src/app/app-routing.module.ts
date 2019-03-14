@@ -7,12 +7,13 @@ import { ProductosComponent } from './productos/productos.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { NoticiasComponent } from './noticias/noticias.component';
 import { RegistrarseComponent } from './registrarse/registrarse.component';
-import { VentasComponent } from './ventas/ventas.component';
 import { ComprasComponent } from './compras/compras.component';
 import { ComentariosComponent } from './comentarios/comentarios.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { AgregarproducutoComponent } from './agregarproducuto/agregarproducuto.component';
 import { PresentacionComponent } from './presentacion/presentacion.component';
+import { VentasComponent } from './ventas/ventas.component';
+
 
 const routes: Routes = [
   {path: '', component: InicioComponent},
