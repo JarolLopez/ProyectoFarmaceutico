@@ -41,6 +41,7 @@ import { ComentarioService } from './servicio/comentario.service';
 import { ToastrModule } from 'ngx-toastr';
 import { VentasComponent } from './ventas/ventas.component';
 import { ComentarioListComponent } from './comentario-list/comentario-list.component';
+import { ComentarioComponent } from './comentario/comentario.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { ComentarioListComponent } from './comentario-list/comentario-list.compo
     UsuariosComponent,
     AgregarproducutoComponent,
     PresentacionComponent,
-    ComentarioListComponent
+    ComentarioListComponent,
+    ComentarioComponent
   
   
   ],
