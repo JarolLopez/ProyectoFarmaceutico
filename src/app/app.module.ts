@@ -11,6 +11,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule, MatNativeDateModule, MatSlideToggleModule} from '@angular/material';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms'
 import {AngularFireDatabaseModule} from 'angularfire2/database';
+import { AngularFirestore } from 'angularfire2/firestore';
 import {AngularFireModule} from 'angularfire2';
 import {environment} from '../environments/environment';
 import {MatGridListModule} from '@angular/material/grid-list';
@@ -30,12 +31,16 @@ import { ProductosComponent } from './productos/productos.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { NoticiasComponent } from './noticias/noticias.component';
 import { RegistrarseComponent } from './registrarse/registrarse.component';
-import { VentasComponent } from './ventas/ventas.component';
 import { ComprasComponent } from './compras/compras.component';
 import { ComentariosComponent } from './comentarios/comentarios.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { AgregarproducutoComponent } from './agregarproducuto/agregarproducuto.component';
 import { PresentacionComponent } from './presentacion/presentacion.component';
+import { ComentarioService } from './servicio/comentario.service';
+
+import { ToastrModule } from 'ngx-toastr';
+import { VentasComponent } from './ventas/ventas.component';
+import { ComentarioListComponent } from './comentario-list/comentario-list.component';
 
 @NgModule({
   declarations: [
@@ -48,12 +53,15 @@ import { PresentacionComponent } from './presentacion/presentacion.component';
     PedidosComponent,
     NoticiasComponent,
     RegistrarseComponent,
-    VentasComponent,
+   VentasComponent,
     ComprasComponent,
     ComentariosComponent,
     UsuariosComponent,
     AgregarproducutoComponent,
-    PresentacionComponent
+    PresentacionComponent,
+    ComentarioListComponent
+  
+  
   ],
   imports: [
     BrowserModule,
@@ -83,10 +91,14 @@ import { PresentacionComponent } from './presentacion/presentacion.component';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     MatSlideToggleModule,
     MatCardModule,
+    AngularFireModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     MatGridListModule
   ],
-  providers: [],
+  providers: [ComentarioService, AngularFirestore],
   bootstrap: [AppComponent],
-  entryComponents: [AgregarproducutoComponent, ProductosComponent, RegistrarseComponent, PresentacionComponent]
+  entryComponents: [AgregarproducutoComponent, ProductosComponent, RegistrarseComponent, PresentacionComponent, ]
 })
 export class AppModule { }
