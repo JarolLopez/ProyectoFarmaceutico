@@ -1,15 +1,15 @@
+<br>
 
 
-
-<div class="col-md-7">
+<div class="col-md-12">
   <app-comentario-list></app-comentario-list>
 </div>
 
 
 
 
-
-<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+<div class="container">
+  <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
     <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
 
 
@@ -20,6 +20,7 @@
   
     <div class="form-group">
       <input name="informacion" #informacion="ngModel" [(ngModel)]="service.formData.informacion" class="form-control" placeholder="informacion">
+
     </div>
   
 
@@ -32,3 +33,4 @@
     </div>
   </form>
   
+</div>
