@@ -11,8 +11,8 @@
         <tbody>
           <tr *ngFor="let com of list">
             <td (click)="onEdit(com)">{{com.email}} - {{com.email}}</td>
-            <td (click)="onEdit(com)">{{com.informacion}}</td>
-            <td><a class="btn text-danger" (click)="onDelete(com.id)"><i class="fa fa-trash"></i></a></td>
+            <td (click)="onEdit(com)">{{com.informacion}}-{{com.email}}</td>
+            <td><a class=" btn text-danger"   (click)="onDelete(com.id)"><i class="fa fa-trash"></i></a></td>
           </tr>
         </tbody>
       </table>

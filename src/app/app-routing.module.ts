@@ -1,18 +1,18 @@
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { InicioComponent } from './inicio/inicio.component';
-import { LoginComponent } from './login/login.component';
-import { ContactoComponent } from './contacto/contacto.component';
-import { ProductosComponent } from './productos/productos.component';
-import { PedidosComponent } from './pedidos/pedidos.component';
-import { NoticiasComponent } from './noticias/noticias.component';
-import { RegistrarseComponent } from './registrarse/registrarse.component';
-import { ComprasComponent } from './compras/compras.component';
-import { ComentariosComponent } from './comentarios/comentarios.component';
-import { UsuariosComponent } from './usuarios/usuarios.component';
-import { AgregarproducutoComponent } from './agregarproducuto/agregarproducuto.component';
-import { PresentacionComponent } from './presentacion/presentacion.component';
-import { VentasComponent } from './ventas/ventas.component';
+import { InicioComponent } from './components/inicio/inicio.component';
+import { LoginComponent } from './components/login/login.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
+import { ProductosComponent } from './components/productos/productos.component';
+import { PedidosComponent } from './components/pedidos/pedidos.component';
+import { NoticiasComponent } from './components/noticias/noticias.component';
+import { RegistrarseComponent } from './components/registrarse/registrarse.component';
+import { ComprasComponent } from './components/compras/compras.component';
+import { ComentariosComponent } from './components/comentarios/comentarios.component';
+import { UsuariosComponent } from './components/usuarios/usuarios.component';
+import { AgregarproducutoComponent } from './components/agregarproducuto/agregarproducuto.component';
+import { PresentacionComponent } from './components/presentacion/presentacion.component';
+import { VentasComponent } from './components/ventas/ventas.component';
 
 
 const routes: Routes = [

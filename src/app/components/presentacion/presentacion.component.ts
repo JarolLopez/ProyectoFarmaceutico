@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ConexfirebaseService} from '../conexfirebase.service';
+import {ConexfirebaseService} from '../../conexfirebase.service';
 import { AgregarproducutoComponent } from '../agregarproducuto/agregarproducuto.component';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDialogConfig} from '@angular/material';
 import { LoginComponent } from '../login/login.component';

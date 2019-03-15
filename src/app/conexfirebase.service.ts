@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {NgModule} from '@angular/core';
 import {ReactiveFormsModule} from '@angular/forms';
 import {AngularFireDatabase, AngularFireList} from 'angularfire2/database';
-import {PresentacionComponent} from '../app/presentacion/presentacion.component';
+import {PresentacionComponent} from '../app/components/presentacion/presentacion.component';
 
 @Injectable({
   providedIn: 'root'

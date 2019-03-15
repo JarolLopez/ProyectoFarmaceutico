@@ -18,29 +18,29 @@ import {MatGridListModule} from '@angular/material/grid-list';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MynavComponent } from './mynav/mynav.component';
+import { MynavComponent } from './components/mynav/mynav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule,
   MatButtonModule, MatSidenavModule, MatIconModule, MatListModule,
   MatFormFieldModule, MatPaginatorModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LoginComponent } from './login/login.component';
-import { InicioComponent } from './inicio/inicio.component';
-import { ContactoComponent } from './contacto/contacto.component';
-import { ProductosComponent } from './productos/productos.component';
-import { PedidosComponent } from './pedidos/pedidos.component';
-import { NoticiasComponent } from './noticias/noticias.component';
-import { RegistrarseComponent } from './registrarse/registrarse.component';
-import { ComprasComponent } from './compras/compras.component';
-import { ComentariosComponent } from './comentarios/comentarios.component';
-import { UsuariosComponent } from './usuarios/usuarios.component';
-import { AgregarproducutoComponent } from './agregarproducuto/agregarproducuto.component';
-import { PresentacionComponent } from './presentacion/presentacion.component';
+import { LoginComponent } from './components/login/login.component';
+import { InicioComponent } from './components/inicio/inicio.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
+import { ProductosComponent } from './components/productos/productos.component';
+import { PedidosComponent } from './components/pedidos/pedidos.component';
+import { NoticiasComponent } from './components/noticias/noticias.component';
+import { RegistrarseComponent } from './components/registrarse/registrarse.component';
+import { ComprasComponent } from './components/compras/compras.component';
+import { ComentariosComponent } from './components/comentarios/comentarios.component';
+import { UsuariosComponent } from './components/usuarios/usuarios.component';
+import { AgregarproducutoComponent } from './components/agregarproducuto/agregarproducuto.component';
+import { PresentacionComponent } from './components/presentacion/presentacion.component';
 import { ComentarioService } from './servicio/comentario.service';
 
 import { ToastrModule } from 'ngx-toastr';
-import { VentasComponent } from './ventas/ventas.component';
-import { ComentarioListComponent } from './comentario-list/comentario-list.component';
+import { VentasComponent } from './components/ventas/ventas.component';
+import { ComentarioListComponent } from './components/comentario-list/comentario-list.component';
 
 @NgModule({
   declarations: [

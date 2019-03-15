@@ -1,6 +1,3 @@
-
-
-
 <div class="col-md-7">
   <app-comentario-list></app-comentario-list>
 </div>
@@ -15,12 +12,14 @@
 
     <div class="form-group">
       <input name="email" #email="ngModel" [(ngModel)]="service.formData.email" class="form-control" placeholder="email" required>
-      <div *ngIf="email.invalid && email.touched" class="validation-error">This field is required.</div>
+      <div *ngIf="email.invalid && email.touched" class="validation-error">ingrese su contraseña.</div>
     </div>
-
+  
     <div class="form-group">
       <input name="informacion" #informacion="ngModel" [(ngModel)]="service.formData.informacion" class="form-control" placeholder="informacion">
     </div>
+  
+
 
     
       

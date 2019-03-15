@@ -1,6 +1,6 @@
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Component, OnInit } from '@angular/core';
-import { ComentarioService } from './../servicio/comentario.service';
+import { ComentarioService } from '../../servicio/comentario.service';
 
 import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
