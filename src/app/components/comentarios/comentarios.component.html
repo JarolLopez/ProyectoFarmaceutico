@@ -1,11 +1,7 @@
-<<<<<<< HEAD:src/app/components/comentarios/comentarios.component.html
-<div class="col-md-7">
-=======
 <br>
 
 
 <div class="col-md-12">
->>>>>>> e3693682e09516dceb769ad47157f3ca6c414f97:src/app/comentarios/comentarios.component.html
   <app-comentario-list></app-comentario-list>
 </div>
 
@@ -19,7 +15,7 @@
 
     <div class="form-group">
       <input name="email" #email="ngModel" [(ngModel)]="service.formData.email" class="form-control" placeholder="email" required>
-      <div *ngIf="email.invalid && email.touched" class="validation-error">ingrese su contraseña.</div>
+      <div *ngIf="email.invalid && email.touched" class="validation-error">ingrese su correo.</div>
     </div>
   
     <div class="form-group">
