@@ -1,0 +1,18 @@
+.container{
+    width: 70%;
+}
+
+.btn.btn-lg.btn-block.btn-info{
+    width: 40%;
+    top: 1px;
+  
+    position: relative;
+    padding: 2%;
+   
+    height: 50px;
+    margin: 0 auto;
+    left: 10px;
+   
+    
+
+}

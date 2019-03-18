@@ -1,12 +1,19 @@
+<<<<<<< HEAD:src/app/components/comentarios/comentarios.component.html
 <div class="col-md-7">
+=======
+<br>
+
+
+<div class="col-md-12">
+>>>>>>> e3693682e09516dceb769ad47157f3ca6c414f97:src/app/comentarios/comentarios.component.html
   <app-comentario-list></app-comentario-list>
 </div>
 
 
 
 
-
-<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+<div class="container">
+  <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
     <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
 
 
@@ -17,6 +24,7 @@
   
     <div class="form-group">
       <input name="informacion" #informacion="ngModel" [(ngModel)]="service.formData.informacion" class="form-control" placeholder="informacion">
+
     </div>
   
 
@@ -29,3 +37,4 @@
     </div>
   </form>
   
+</div>
