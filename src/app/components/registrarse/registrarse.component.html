@@ -1,52 +1,79 @@
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close style="background: red"><mat-icon class="cerrar">clear</mat-icon></button>
+</mat-dialog-actions>
 
+<div class="row">
  <mat-card class="mymad">
-<form class="example-form">
+<form class="example-form" name="formUsuario" #formUsuario="ngForm" (ngSubmit)="onSaveUsuario(formUsuario)">
   
   <h4 style="text-align:center;color:blue;">Crea tu cuenta</h4>
+
+  <div>
+    <input [(ngModel)]="this.dataUsuario.selectedUsuario.id" name="id" type="hidden">
+  </div>
+<!--[formControl]="emailFormControl"-->
     <mat-form-field class="example-full-width">
-        <input [(ngModel)]="inputC" name="inputC" [formControl]="emailFormControl" type="email" required placeholder="correo"class= "example-form" matInput placeholder="Correo Electronico" value="">
-        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+        <input [(ngModel)]="this.dataUsuario.selectedUsuario.correoE" name="correoE"  type="email" required placeholder="correo"class= "example-form" matInput placeholder="Correo Electronico" value="">
+        <!--<mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
           Please enter a valid email address
         </mat-error>
       
       <mat-error *ngIf="emailFormControl.hasError('required')">
           Email is <strong>required</strong>
         </mat-error>
-    </mat-form-field>
-  
+-->
+      </mat-form-field>  
    
 
-    <mat-form-field>
-        <input [(ngModel)]="pass" name="pass" required  placeholder="password"  class= "example-form" matInput placeholder="Contraseña" [type]="hide ? 'password' : 'text'">
-      
-        </mat-form-field>
+      <mat-form-field>
+        <input [(ngModel)]="this.dataUsuario.selectedUsuario.contrasena" name="contrasena" required  placeholder="password"  class= "example-form" matInput placeholder="Contraseña" [type]="hide ? 'password' : 'text'">
+      </mat-form-field>
+
 <br>
-        <mat-form-field>
-            <input [(ngModel)]="pass" name="pass" required  placeholder="password" class= "example-form" matInput placeholder=" Confirmar Contraseña" [type]="hide ? 'password' : 'text'">
-            </mat-form-field>
+      <mat-form-field>
+        <input [(ngModel)]="this.dataUsuario.selectedUsuario.confirmarContrasena" name="confirmarContrasena" required  placeholder="password" class= "example-form" matInput placeholder=" Confirmar Contraseña" [type]="hide ? 'password' : 'text'">
+      </mat-form-field>
 
-    <mat-form-field class="example-full-width ">
-    <textarea [(ngModel)]="nom" name="nom" required  placeholder="nombre"class= "example-form" matInput placeholder="¿Como te llamas?" ></textarea>
-    </mat-form-field>
+      <mat-form-field class="example-full-width ">
+      <input [(ngModel)]="this.dataUsuario.selectedUsuario.nombre" name="nombre" required  placeholder="nombre"class= "example-form" matInput placeholder="Nombre" >
+      </mat-form-field>
 
-    <mat-form-field class="example-full-width">
+      <mat-form-field class="example-full-width ">
+      <input [(ngModel)]="this.dataUsuario.selectedUsuario.apellido" name="apellido" required  placeholder="apellido"class= "example-form" matInput placeholder="Apellido" >
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width ">
+        <input [(ngModel)]="this.dataUsuario.selectedUsuario.edad" name="edad" required  placeholder="edad"class= "example-form" matInput placeholder="Edad" >
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width ">
+        <input [(ngModel)]="this.dataUsuario.selectedUsuario.cedula" name="cedula" required  placeholder="cedula"class= "example-form" matInput placeholder="Cedula" >
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
         <span matPrefix>+505 &nbsp;</span>
-        <input [(ngModel)]="num" name="num" required  placeholder="numero" class= "example-form" type="tel" matInput placeholder="Telephone">
+        <input [(ngModel)]="this.dataUsuario.selectedUsuario.telefono" name="telefono" required  placeholder="numero" class= "example-form" type="tel" matInput placeholder="Telephone">
         <mat-icon matSuffix>mode_edit</mat-icon>
-    </mat-form-field>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width ">
+        <input [(ngModel)]="this.dataUsuario.selectedUsuario.sexo" name="sexo" required  placeholder="Sexo"class= "example-form" matInput>
+      </mat-form-field>
 
   
-    <mat-radio-group>
+      <!--<mat-radio-group>
         <h3>Sexo</h3>
         <mat-radio-button value="1">Masculino</mat-radio-button>
         <mat-radio-button value="2">Femenino</mat-radio-button>
         <mat-radio-button value="3">Otro</mat-radio-button>
       </mat-radio-group>
+      -->
 
       <div class="example-button-row">
           <br>
-            <button mat-raised-button color="primary" style="background:B ">Registrarse</button>
+            <button mat-raised-button color="primary" type="submit" style="background:B ">Registrarse</button>
           </div>
 
   </form>
   </mat-card>
+</div>

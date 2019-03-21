@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ConexfirebaseService } from './conexfirebase.service';
+import { UsuarioService } from './usuario.service';
 
-describe('ConexfirebaseService', () => {
+describe('UsuarioService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: ConexfirebaseService = TestBed.get(ConexfirebaseService);
+    const service: UsuarioService = TestBed.get(UsuarioService);
     expect(service).toBeTruthy();
   });
 });
