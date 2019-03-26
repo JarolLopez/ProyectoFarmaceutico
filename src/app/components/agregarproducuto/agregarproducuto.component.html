@@ -42,6 +42,10 @@
         <input  [(ngModel)]="precioL" name="pass" required  placeholder="PrecioL" type="text"  type="precioL" class= "example-form"  matInput placeholder="Precio total del lote">
     </mat-form-field>
 
+    <h3 *ngFor="let presentacion of presentaciones">
+      {{presentacion.descripcion}}
+    </h3>
+
     <button type="submit" class="btnguardar">Guardar</button>
     </form>
     </mat-card>

@@ -1,7 +1,3 @@
-<mat-dialog-actions align="end">
-    <button mat-button mat-dialog-close style="background: red"><mat-icon class="cerrar">clear</mat-icon></button>
-</mat-dialog-actions>
-
 <div class="row">
  <mat-card class="mymad">
 <form class="example-form" name="formUsuario" #formUsuario="ngForm" (ngSubmit)="onSaveUsuario(formUsuario)">
@@ -56,13 +52,18 @@
         <mat-icon matSuffix>mode_edit</mat-icon>
       </mat-form-field>
 
-      <mat-radio-group name="sexo" [(ngModel)] = "this.dataUsuario.selectedUsuario.sexo">
-        <h3>Sexo</h3>
-        <mat-radio-button value="Masculino">Masculino</mat-radio-button>
-        <mat-radio-button value="Femenino">Femenino</mat-radio-button>
-        <mat-radio-button value="Otro">Otro</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field class="example-full-width ">
+        <input [(ngModel)]="this.dataUsuario.selectedUsuario.sexo" name="sexo" required  placeholder="Sexo"class= "example-form" matInput>
+      </mat-form-field>
       
+      <!--
+      <mat-radio-group>
+        <h3>Sexo</h3>
+        <mat-radio-button type="text" value="Masculino">Masculino</mat-radio-button>
+        <mat-radio-button type="text" value="Femenino">Femenino</mat-radio-button>
+        <mat-radio-button type="text" value="Otro">Otro</mat-radio-button>
+      </mat-radio-group>
+      -->
 
       <div class="example-button-row">
           <br>

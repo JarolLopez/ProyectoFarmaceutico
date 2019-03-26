@@ -53,7 +53,7 @@ import { ComentarioListComponent } from './components/comentario-list/comentario
     PedidosComponent,
     NoticiasComponent,
     RegistrarseComponent,
-   VentasComponent,
+    VentasComponent,
     ComprasComponent,
     ComentariosComponent,
     UsuariosComponent,
@@ -99,6 +99,7 @@ import { ComentarioListComponent } from './components/comentario-list/comentario
   ],
   providers: [ComentarioService, AngularFirestore],
   bootstrap: [AppComponent],
-  entryComponents: [AgregarproducutoComponent, ProductosComponent, RegistrarseComponent, PresentacionComponent, ]
+  entryComponents: [AgregarproducutoComponent, ProductosComponent, RegistrarseComponent, PresentacionComponent, 
+  PedidosComponent, VentasComponent]
 })
 export class AppModule { }

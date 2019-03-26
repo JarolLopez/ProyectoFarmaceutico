@@ -4,6 +4,10 @@ import {PresentacionComponent} from '../presentacion/presentacion.component';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDialogConfig} from '@angular/material';
 
 
+import {PresentacionService} from '../../servicio/presentacion.service';
+import {presentacionInterface} from 'src/app/modelos/presentacion.model';
+import {NgForm} from '@angular/forms';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -12,13 +16,15 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDialogConfig} from '@angula
   styleUrls: ['./agregarproducuto.component.css']
 })
 export class AgregarproducutoComponent implements OnInit {
+  dataSource: any;
 
   constructor(
-    public dialog: MatDialog
-  ) { }
+    public dialog: MatDialog, private dataPresentacion: PresentacionService) { }
+    private presentaciones: presentacionInterface[];
+
  
   openDialog1() {
-    const dialogRef = this.dialog.open(PresentacionComponent);
+    const dialogRef = this.dialog.open(PresentacionComponent,);
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
@@ -26,6 +32,14 @@ export class AgregarproducutoComponent implements OnInit {
   }
   
   ngOnInit() {
+    this.getListarPresentacion();
+  }
+
+  getListarPresentacion(){
+    this.dataPresentacion.obtenerPresentacion()
+    .subscribe(presentaciones => {
+      this.presentaciones = presentaciones;
+    })
   }
 
  

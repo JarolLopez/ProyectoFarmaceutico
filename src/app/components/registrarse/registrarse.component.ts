@@ -13,6 +13,8 @@ import {MatDialog} from '@angular/material';
   styleUrls: ['./registrarse.component.css']
 })
 export class RegistrarseComponent implements OnInit {
+
+
   /*
   emailFormControl = new FormControl('', [
     Validators.required,

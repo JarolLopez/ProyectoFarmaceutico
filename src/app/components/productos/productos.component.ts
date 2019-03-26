@@ -50,7 +50,10 @@ export class ProductosComponent implements OnInit {
   ) { }
 
   openDialog() {
-    const dialogRef = this.dialog.open(AgregarproducutoComponent);
+    const dialogRef = this.dialog.open(AgregarproducutoComponent, {
+      height: '500px',
+      width: '500px',
+    });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
