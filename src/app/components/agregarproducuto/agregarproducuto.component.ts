@@ -8,6 +8,7 @@ import {PresentacionService} from '../../servicio/presentacion.service';
 import {presentacionInterface} from 'src/app/modelos/presentacion.model';
 import {NgForm} from '@angular/forms';
 import Swal from 'sweetalert2';
+import { ProductoService } from 'src/app/servicio/producto.service';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class AgregarproducutoComponent implements OnInit {
   dataSource: any;
 
   constructor(
-    public dialog: MatDialog, private dataPresentacion: PresentacionService) { }
+    public dataProducto: ProductoService,public dialog: MatDialog, private dataPresentacion: PresentacionService) { }
     private presentaciones: presentacionInterface[];
 
  
@@ -41,6 +42,25 @@ export class AgregarproducutoComponent implements OnInit {
       this.presentaciones = presentaciones;
     })
   }
+
+  onSaveProducto(formProducto: NgForm): void {
+    //Nuevo
+    if(formProducto.valid){
+    if(formProducto.value.id==null)
+    {
+      console.log('id',formProducto.value.id);
+      this.dataProducto.AgregarProducto(formProducto.value);
+      formProducto.reset();
+      this.dialog.closeAll();
+    }
+    else
+    {
+      this.dataProducto.ActualizarProducto(formProducto.value)
+      formProducto.reset();
+      this.dialog.closeAll();
+    }
+  }
+}
 
  
 }
