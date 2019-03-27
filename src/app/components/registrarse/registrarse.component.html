@@ -1,79 +1,48 @@
-<mat-dialog-actions align="end">
-    <button mat-button mat-dialog-close style="background: red"><mat-icon class="cerrar">clear</mat-icon></button>
-</mat-dialog-actions>
+<section id="register" class="mb-5 mt-5">
+  <div class="container">
+    <div class="row">
 
-<div class="row">
- <mat-card class="mymad">
-<form class="example-form" name="formUsuario" #formUsuario="ngForm" (ngSubmit)="onSaveUsuario(formUsuario)">
-  
-  <h4 style="text-align:center;color:blue;">Crea tu cuenta</h4>
+      <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+        <div class="card_register">
+          <div class="card">
+            <div class="card-body text-center">
+              <form #formRegister="ngForm" (ngSubmit)="onAddUser()">
+                <h1 class="h3 mb-3 font-weight-normal">Register</h1>
+                <div class="alert alert-danger" role="alert" *ngIf="isError">
+                  {{msgError}}
+                </div>
 
-  <div>
-    <input [(ngModel)]="this.dataUsuario.selectedUsuario.id" name="id" type="hidden">
-  </div>
-<!--[formControl]="emailFormControl"-->
-    <mat-form-field class="example-full-width">
-        <input [(ngModel)]="this.dataUsuario.selectedUsuario.correoE" name="correoE"  type="email" required placeholder="correo"class= "example-form" matInput placeholder="Correo Electronico" value="">
-        <!--<mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-          Please enter a valid email address
-        </mat-error>
-      
-      <mat-error *ngIf="emailFormControl.hasError('required')">
-          Email is <strong>required</strong>
-        </mat-error>
--->
-      </mat-form-field>  
-   
+                <div class="form-group">
+                  <input type="email" name="email" class="form-control" placeholder="Email" [(ngModel)]="email" required minlength="8">
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="email.touched && !email.valid">
+                  <div *ngIf="email.errors.required">se requiere correo electronico</div>
+                  <div *ngIf="email.errors.minlength">El correo electrónico debe tener al menos 8 caracteres</div>
+                </div>
 
-      <mat-form-field>
-        <input [(ngModel)]="this.dataUsuario.selectedUsuario.contrasena" name="contrasena" required  placeholder="password"  class= "example-form" matInput placeholder="Contraseña" [type]="hide ? 'password' : 'text'">
-      </mat-form-field>
+                <div class="form-group">
+                  <input type="password" name="password" class="form-control" placeholder="Password" [(ngModel)]="password" required minlength="5"
+                    maxlength="10">
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="password.touched && !password.valid">
+                  <div *ngIf="password.errors.required">se requiere contraseña</div>
+                  <div *ngIf="password.errors.minlength">La contraseña debe tener al menos 5 caracteres</div>
+                </div>
+               
+              
+                
+                  <button type="submit"  class="btn btn-lg btn-secondary btn-block">Registrarse</button>
+               
+                <div class="form-group">
+                  <a routerLink="/login" class="form-control login-components">Ya tienes cuenta</a>
+                </div>
+               
+              </form>
 
-<br>
-      <mat-form-field>
-        <input [(ngModel)]="this.dataUsuario.selectedUsuario.confirmarContrasena" name="confirmarContrasena" required  placeholder="password" class= "example-form" matInput placeholder=" Confirmar Contraseña" [type]="hide ? 'password' : 'text'">
-      </mat-form-field>
-
-      <mat-form-field class="example-full-width ">
-      <input [(ngModel)]="this.dataUsuario.selectedUsuario.nombre" name="nombre" required  placeholder="nombre"class= "example-form" matInput placeholder="Nombre" >
-      </mat-form-field>
-
-      <mat-form-field class="example-full-width ">
-      <input [(ngModel)]="this.dataUsuario.selectedUsuario.apellido" name="apellido" required  placeholder="apellido"class= "example-form" matInput placeholder="Apellido" >
-      </mat-form-field>
-
-      <mat-form-field class="example-full-width ">
-        <input [(ngModel)]="this.dataUsuario.selectedUsuario.edad" name="edad" required  placeholder="edad"class= "example-form" matInput placeholder="Edad" >
-      </mat-form-field>
-
-      <mat-form-field class="example-full-width ">
-        <input [(ngModel)]="this.dataUsuario.selectedUsuario.cedula" name="cedula" required  placeholder="cedula"class= "example-form" matInput placeholder="Cedula" >
-      </mat-form-field>
-
-      <mat-form-field class="example-full-width">
-        <span matPrefix>+505 &nbsp;</span>
-        <input [(ngModel)]="this.dataUsuario.selectedUsuario.telefono" name="telefono" required  placeholder="numero" class= "example-form" type="tel" matInput placeholder="Telephone">
-        <mat-icon matSuffix>mode_edit</mat-icon>
-      </mat-form-field>
-
-      <mat-form-field class="example-full-width ">
-        <input [(ngModel)]="this.dataUsuario.selectedUsuario.sexo" name="sexo" required  placeholder="Sexo"class= "example-form" matInput>
-      </mat-form-field>
-
-  
-      <!--<mat-radio-group>
-        <h3>Sexo</h3>
-        <mat-radio-button value="1">Masculino</mat-radio-button>
-        <mat-radio-button value="2">Femenino</mat-radio-button>
-        <mat-radio-button value="3">Otro</mat-radio-button>
-      </mat-radio-group>
-      -->
-
-      <div class="example-button-row">
-          <br>
-            <button mat-raised-button color="primary" type="submit" style="background:B ">Registrarse</button>
+            </div>
           </div>
-
-  </form>
-  </mat-card>
-</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

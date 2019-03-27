@@ -22,6 +22,7 @@ export class ComentarioListComponent implements OnInit {
 
   
   ngOnInit() {
+   
     this.service.getComentario().subscribe(actionArray => {
       this.list = actionArray.map(item => {
         return {

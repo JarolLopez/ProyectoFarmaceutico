@@ -1,6 +1,6 @@
 export class Comentario {
     id: string;
-    Fecha: string;
+    fecha: string;
     email: string;
     informacion: string;
 }

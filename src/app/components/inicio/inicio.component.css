@@ -6,8 +6,9 @@
     border-radius: 200px;
 }
 .mat-grid-tile {
-    background: lightblue;
+    background:#eeeeee;
     width: 100%;
+    border-radius: 20px;
   }
 
 div#general{
@@ -29,11 +30,11 @@ div#Principal{
     margin: 10px;
     border: 1px solid #555;
   }
-
+ 
 div#noticias{
     width: 69.5%;
     height: 25%;
-    background-color: blue;
+  
     text-align: center;
 }
 /* @media (min-width: 780px){
@@ -51,7 +52,7 @@ div#secundario  {
 .targetaprincipal{
     width: 66%;
     height: 20%;
-    background-color: blue;
+    background-color:#EEEEEE;
     text-align: center;
     margin-top: 1%;
     margin-left: 1%;
@@ -107,7 +108,16 @@ footer{
  
     left: 400px;
 }
+
+.titulo{
+color:blue;
+}
 .farmaciaEmeling{
     width: 100%;
     height:600px ;
+}
+
+
+.presentacion{
+   text-align: center;
 }
