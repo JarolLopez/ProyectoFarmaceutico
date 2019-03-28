@@ -1,6 +1,7 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
 import {MatPaginator, MatSort} from '@angular/material';
+import {MatDialog} from '@angular/material';
 
 export interface PeriodicElement {
   name: string;
@@ -20,6 +21,10 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
   {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
   {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
+  {position: 11, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
+  {position: 12, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
+  {position: 13, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
+  {position: 14, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
 ];
 
 

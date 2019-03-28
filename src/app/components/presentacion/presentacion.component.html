@@ -1,19 +1,37 @@
 <mat-card class="mymad">
     <h4>Agregar presentación</h4>
-  <form class="example-form">
+  <form class="example-form" name="formPresentacion" #formPresentacion="ngForm" (ngSubmit)="guardarPresentacion(formPresentacion)">
     <img class="imglog" src ="./../../assets/Imagenes/Medicamentos-2.png">
-   
-    
+
+      <div>
+        <input [(ngModel)]="this.dataPresentacion.selectedPresentacion.id" name="id" type="hidden">
+      </div>
+
       <mat-form-field class="example-full-width">
-       
         <br>
-        <input matInput placeholder="Descripcion">
+        <input [(ngModel)]="this.dataPresentacion.selectedPresentacion.imagen" name="imagen" matInput placeholder="Imagen">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <br>
+        <input matInput [(ngModel)]="this.dataPresentacion.selectedPresentacion.descripcion" name="descripcion" placeholder="Descripcion">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <br>
+        <input [(ngModel)]="this.dataPresentacion.selectedPresentacion.codigo" name="codigo" matInput placeholder="Codigo">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <br>
+        <input [(ngModel)]="this.dataPresentacion.selectedPresentacion.cantidad" name="cantidad" matInput placeholder="Cantidad">
       </mat-form-field>
       <br>
   
-      <button mat-raised-button color="primary" type="submit" 
-      matTooltip="Info about the action"
-      aria-label="Button that displays a tooltip when focused or hovered over"> Guardar </button>
+      <button mat-raised-button color="primary" type="submit"> Guardar </button>
   
   
     </form>

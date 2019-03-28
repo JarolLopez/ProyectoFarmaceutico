@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
 import {MatPaginator, MatSort} from '@angular/material';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatDialog} from '@angular/material';
+import { VentasComponent } from '../ventas/ventas.component';
 
 export interface PeriodicElement {
   name: string;
@@ -41,10 +43,22 @@ export class PedidosComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  constructor() { }
+  constructor(
+    public dialog: MatDialog
+  ) { }
 
   ngOnInit() {
     this.dataSource.paginator = this.paginator;
+  }
+  openDialog(){
+    const dialogRef = this.dialog.open(VentasComponent, {
+      height: '450px',
+      width: '800px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
 }

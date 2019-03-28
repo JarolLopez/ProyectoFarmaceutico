@@ -56,7 +56,7 @@ import { ScrollDispatchModule, CdkScrollable, ScrollingModule } from '@angular/c
     PedidosComponent,
     NoticiasComponent,
     RegistrarseComponent,
-   VentasComponent,
+    VentasComponent,
     ComprasComponent,
     ComentariosComponent,
     UsuariosComponent,
@@ -106,6 +106,7 @@ import { ScrollDispatchModule, CdkScrollable, ScrollingModule } from '@angular/c
   ],
   providers: [ComentarioService, AngularFirestore,AngularFireAuth],
   bootstrap: [AppComponent],
-  entryComponents: [AgregarproducutoComponent, ProductosComponent, RegistrarseComponent, PresentacionComponent, ]
+  entryComponents: [AgregarproducutoComponent, ProductosComponent, RegistrarseComponent, PresentacionComponent, 
+  PedidosComponent, VentasComponent]
 })
 export class AppModule { }

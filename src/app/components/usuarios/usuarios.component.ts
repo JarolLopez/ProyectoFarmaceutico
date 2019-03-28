@@ -6,6 +6,7 @@ import { RegistrarseComponent } from '../registrarse/registrarse.component';
 import {UsuarioService} from '../../servicio/usuario.service';
 import {usuarioInterface} from 'src/app/modelos/usuarioo.models';
 import {NgForm} from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-usuarios',
@@ -54,6 +55,25 @@ export class UsuariosComponent implements OnInit {
   }
 
   borrarUsuario(idUsuario: string): void{
-    this.dataUsuario.borrarUsuario(idUsuario);
+    
+    Swal.fire({
+      title: 'Confirmar eliminar',
+      text:"Esta acción no se puede revertir",
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: 'red',
+      cancelButtonColor: 'blue',
+      confirmButtonText: 'Estoy seguro'
+    }).then((result) =>{
+      if (result.value) {
+        this.dataUsuario.borrarUsuario(idUsuario);
+        Swal.fire({
+          type: 'success',
+          title: 'Usuario eliminado',
+          showConfirmButton: false,
+          timer: 1500
+        })
+      }
+    })
   }
 }

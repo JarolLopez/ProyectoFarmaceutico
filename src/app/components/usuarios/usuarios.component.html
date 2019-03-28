@@ -1,6 +1,6 @@
 
 <br>
-<button   color="primary" mat-raised-button (click)="openDialog()" 
+<button matTooltip="Agregar usuarios"  color="primary" mat-raised-button (click)="openDialog()" 
 ><mat-icon>add</mat-icon>Usuario</button>
 
 <mat-form-field>
@@ -55,8 +55,8 @@
   <ng-container matColumnDef="accion">
       <th mat-header-cell *matHeaderCellDef> Acciones</th>
       <td mat-cell *matCellDef="let row">
-      <button (click)="onActualizarUsuarios(row)"><mat-icon class="actualizar">cached</mat-icon></button>
-      <button (click)="borrarUsuario(row.id)"><mat-icon class="eliminar">delete</mat-icon></button></td>
+      <button matTooltip="Editar" (click)="onActualizarUsuarios(row)"><mat-icon class="actualizar">cached</mat-icon></button>
+      <button matTooltip="Eliminar" (click)="borrarUsuario(row.id)"><mat-icon class="eliminar">delete</mat-icon></button></td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

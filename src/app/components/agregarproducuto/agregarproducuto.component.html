@@ -1,49 +1,46 @@
 
   <h4 style="text-align:center;color:blue;">Agregar un nuevo producto</h4>
   <div><br></div><div><br></div>
-  <button  class="btnpresentacion" color="primary" mat-raised-button (click)="openDialog1()"
+  <button matTooltip="Agregar nueva presentación" class="btnpresentacion" color="primary" mat-raised-button (click)="openDialog1()"
   ><mat-icon class="buttom">add</mat-icon>Presentación</button>
+
+  <div>
+    <input [(ngModel)]="this.dataProducto.selectedProducto.id" name="id" type="hidden">
+  </div>
   
 
 <mat-card class="mymad">
-  <form class="example-form">
-    
-  
+  <form class="contenedor" name="formProducto" #formProducto="ngForm" (ngSubmit)="onSaveProducto(formProducto)">
       
-<h4>seleccionar</h4>
-<mat-form-field>
-  <select matNativeControl required>
-    <option value="acetominifen">Acetominifen</option>
-    <option value="saab">Saab</option>
-    <option value="mercedes">Mercedes</option>
-    <option value="audi">Audi</option>
-  </select>
-</mat-form-field>
-
-      <mat-form-field class="example-full-width">
-        <input  [(ngModel)]="pass" name="NombreP" required  placeholder="NombreP" type="producto"class= "example-form" matInput placeholder="Nombre del producto" value="">
+    <mat-form-field>
+        <mat-label>Presentación</mat-label>
+        <mat-select [(ngModel)]="this.dataProducto.selectedProducto.presentacion" name="presentacion">
+          <mat-option placeholder="NombreP" *ngFor="let presentacion of presentaciones" [value]="presentacion.descripcion">
+            {{presentacion.descripcion}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-          <input  [(ngModel)]="pass" name="DescriP" required  placeholder="DescriP" type="Descrip" class= "example-form" matInput placeholder="Descripción del producto" value="">
+        <input  [(ngModel)]="this.dataProducto.selectedProducto.numeroLote" name="numeroLote" required type="producto"class= "example-form" matInput placeholder="Descripción del lote" value="">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+          <input  [(ngModel)]="this.dataProducto.selectedProducto.precioUnitario" name="precioUnitario" required type="Descrip" class= "example-form" matInput placeholder="Precio del producto" value="">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input  [(ngModel)]="this.dataProducto.selectedProducto.cantidad" name="cantidad" required type="Descrip" class= "example-form" matInput placeholder="Cantidad del producto" value="">
         </mat-form-field>
 
         <mat-form-field>
-            <input [(ngModel)]="fecha" name="fecha" required  placeholder="fecha" matInput [matDatepicker]="picker" placeholder="Choose a date">
+            <input [(ngModel)]="this.dataProducto.selectedProducto.fechaVencimiento" name="fechaVencimiento" required  matInput [matDatepicker]="picker" placeholder="Fecha de Vencimiento">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
-    
-      <mat-form-field class="example-full-width">
-        <input  [(ngModel)]="PrecioU" name="pass" required  placeholder="PrecioU" type="text"  type="PrecioU" class= "example-form"  matInput placeholder="Precio unitario">
-      </mat-form-field>
-  
-      <mat-form-field class="example-full-width">
-        <input  [(ngModel)]="precioL" name="pass" required  placeholder="PrecioL" type="text"  type="precioL" class= "example-form"  matInput placeholder="Precio total del lote">
-    </mat-form-field>
 
     <button type="submit" class="btnguardar">Guardar</button>
-    </form>
+  </form>
     </mat-card>
 
 <mat-dialog-actions align="end">

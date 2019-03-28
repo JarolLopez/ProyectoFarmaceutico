@@ -28,8 +28,14 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
+  onLogingoogle() {
+     this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+     this.router.navigate(['/inicio']);
+  }
+  
 
   onLogin(): void{
+    this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
     this.authService. loginEmailUser(this.email, this.password)
    .then((res) =>{
     this.router.navigate(['/inicio']);

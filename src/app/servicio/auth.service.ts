@@ -13,7 +13,9 @@ export class AuthService {
 
   constructor(private afsAuth: AngularFireAuth, private afs: AngularFirestore) { }
  
-
+  loginGoogleUser() {
+  
+  }
   registerUser(email: string, pass: string) {
     return new Promise((resolve, reject) => {
       this.afsAuth.auth.createUserWithEmailAndPassword(email, pass)
@@ -29,7 +31,7 @@ export class AuthService {
         err => reject(err));
     });
   }
-
+ 
 
   logoutUser() {
     return this.afsAuth.auth.signOut();
