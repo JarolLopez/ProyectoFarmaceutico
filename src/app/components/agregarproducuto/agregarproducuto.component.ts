@@ -46,20 +46,20 @@ export class AgregarproducutoComponent implements OnInit {
   onSaveProducto(formProducto: NgForm): void {
     //Nuevo
     if(formProducto.valid){
-    if(formProducto.value.id==null)
-    {
-      console.log('id',formProducto.value.id);
-      this.dataProducto.AgregarProducto(formProducto.value);
-      formProducto.reset();
-      this.dialog.closeAll();
+      if(formProducto.value.id==null)
+      {
+        console.log('id',formProducto.value.id);
+        this.dataProducto.AgregarProducto(formProducto.value);
+        formProducto.reset();
+        this.dialog.closeAll();
+      }
+      else
+      {
+        this.dataProducto.ActualizarProducto(formProducto.value)
+        formProducto.reset();
+        this.dialog.closeAll();
+      }
     }
-    else
-    {
-      this.dataProducto.ActualizarProducto(formProducto.value)
-      formProducto.reset();
-      this.dialog.closeAll();
-    }
-  }
 }
 
  
