@@ -1,23 +1,21 @@
 <br>
 
-
-<div class="col-md-12">
-  <app-comentario-list></app-comentario-list>
-</div>
-
-
-
-
 <div class="container">
   <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
     <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
 
 
     <div class="form-group">
-      <input name="email" #email="ngModel" [(ngModel)]="service.formData.email" class="form-control" placeholder="email" required>
+      <input name="email" #email="ngModel" [(ngModel)]="service.formData.email" class="form-control" placeholder="email" >
       <div *ngIf="email.invalid && email.touched" class="validation-error">ingrese su correo.</div>
     </div>
+
+    <div class="form-group">
+        <input type="hidden" [(ngModel)]="service.formData.fecha" name="fecha" value="{{fecha}}"   class="form-control"  placeholder="fecha">
   
+      </div>
+      
+ 
     <div class="form-group">
       <input name="informacion" #informacion="ngModel" [(ngModel)]="service.formData.informacion" class="form-control" placeholder="informacion">
 
@@ -34,3 +32,9 @@
   </form>
   
 </div>
+
+<mat-divider class="dividir"> </mat-divider> 
+
+<div class="col-md-12">
+    <app-comentario-list></app-comentario-list>
+  </div>

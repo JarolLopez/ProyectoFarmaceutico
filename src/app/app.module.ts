@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, HostListener } from '@angular/core';
 import {MatInputModule} from '@angular/material/input';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatTooltipModule} from '@angular/material/tooltip';
@@ -13,6 +13,7 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms'
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import { AngularFirestore } from 'angularfire2/firestore';
 import {AngularFireModule} from 'angularfire2';
+import {AngularFireAuth} from 'angularfire2/auth';
 import {environment} from '../environments/environment';
 import {MatGridListModule} from '@angular/material/grid-list';
 
@@ -38,9 +39,11 @@ import { AgregarproducutoComponent } from './components/agregarproducuto/agregar
 import { PresentacionComponent } from './components/presentacion/presentacion.component';
 import { ComentarioService } from './servicio/comentario.service';
 
+
 import { ToastrModule } from 'ngx-toastr';
 import { VentasComponent } from './components/ventas/ventas.component';
 import { ComentarioListComponent } from './components/comentario-list/comentario-list.component';
+import { ScrollDispatchModule, CdkScrollable, ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
@@ -59,7 +62,7 @@ import { ComentarioListComponent } from './components/comentario-list/comentario
     UsuariosComponent,
     AgregarproducutoComponent,
     PresentacionComponent,
-    ComentarioListComponent
+    ComentarioListComponent,
   
   
   ],
@@ -95,9 +98,13 @@ import { ComentarioListComponent } from './components/comentario-list/comentario
     FormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    MatGridListModule,
+    ScrollingModule,
     MatGridListModule
+  
+ 
   ],
-  providers: [ComentarioService, AngularFirestore],
+  providers: [ComentarioService, AngularFirestore,AngularFireAuth],
   bootstrap: [AppComponent],
   entryComponents: [AgregarproducutoComponent, ProductosComponent, RegistrarseComponent, PresentacionComponent, 
   PedidosComponent, VentasComponent]
