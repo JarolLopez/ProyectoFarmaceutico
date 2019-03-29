@@ -44,6 +44,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { VentasComponent } from './components/ventas/ventas.component';
 import { ComentarioListComponent } from './components/comentario-list/comentario-list.component';
 import { ScrollDispatchModule, CdkScrollable, ScrollingModule } from '@angular/cdk/scrolling';
+import { AuthguardarService } from './servicio/authguardar.service';
 
 @NgModule({
   declarations: [
