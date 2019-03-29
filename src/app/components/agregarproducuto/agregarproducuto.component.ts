@@ -20,8 +20,8 @@ export class AgregarproducutoComponent implements OnInit {
   dataSource: any;
 
   constructor(
-    public dataProducto: ProductoService,public dialog: MatDialog, private dataPresentacion: PresentacionService) { }
-    private presentaciones: presentacionInterface[];
+    public dataProducto: ProductoService,public dialog: MatDialog, public dataPresentacion: PresentacionService) { }
+    public presentaciones: presentacionInterface[];
 
  
   openDialog1() {

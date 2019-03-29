@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     Validators.email,
   ]);
 
-  constructor(public afAuth: AngularFireAuth, private router: Router, private authService: AuthService) { }
+  constructor(public afAuth: AngularFireAuth, public router: Router, public authService: AuthService) { }
   public  email: string 
   public  password: string  
 
