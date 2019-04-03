@@ -15,6 +15,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  public isError;
+  public onLoginGoogle;
 
   emailFormControl = new FormControl('', [
     Validators.required,

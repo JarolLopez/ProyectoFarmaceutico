@@ -1,6 +1,6 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
-import { MatTableDataSource } from '@angular/material';
-import {MatPaginator, MatSort} from '@angular/material';
+import { MatTableDataSource, MatSort } from '@angular/material';
+import {MatPaginator} from '@angular/material';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDialogConfig} from '@angular/material';
 import { Chain } from '@angular/compiler';
 import { Pipe, PipeTransform} from '@angular/core';
@@ -15,10 +15,12 @@ import Swal from 'sweetalert2';
   styleUrls: ['./ventas.component.css']
 })
 export class VentasComponent implements OnInit {
-  displayedColumns: string[] = ['descripcionProducto','codigoProducto', 'cantidad', 'PrecioUnitario', 'precioTotal', 'fechaVenta', 'direccion'];
+  displayedColumns: string[] = ['descripcionProducto','codigoProducto', 'cantidad', 'precioUnitario', 'PrecioTotal', 'fechaVenta', 'direccion'];
   dataSource = new MatTableDataSource<ventasInterface>();
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
@@ -27,6 +29,7 @@ export class VentasComponent implements OnInit {
 
   ngOnInit() {  
     this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
     this.getListarVentas();
   }
 

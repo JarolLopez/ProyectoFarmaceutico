@@ -19,7 +19,7 @@ export class VentasService {
   };
 
   obtenerVentas(){
-    this.ventaColeccion = this.afs.collection<ventasInterface>('productos');
+    this.ventaColeccion = this.afs.collection<ventasInterface>('venta');
     return this.ventas = this.ventaColeccion.snapshotChanges()
     .pipe(map(changes => { 
       return changes.map(action => {

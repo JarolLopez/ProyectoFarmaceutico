@@ -17,7 +17,7 @@ export class ComentariosComponent implements OnInit {
  
 
   
-  constructor(private service: ComentarioService,
+  constructor(public service: ComentarioService,
     private firestore: AngularFirestore,
     private toastr: ToastrService) { }
 

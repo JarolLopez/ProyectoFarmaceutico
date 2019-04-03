@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
-import { MatTableDataSource } from '@angular/material';
+import { MatTableDataSource} from '@angular/material';
 import { Chain } from '@angular/compiler';
 import { Pipe, PipeTransform} from '@angular/core';
 import {MatPaginator, MatSort} from '@angular/material';
@@ -23,6 +23,7 @@ export class ProductosComponent implements OnInit {
   dataSource = new MatTableDataSource<productoInterface>();
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -43,6 +44,7 @@ export class ProductosComponent implements OnInit {
 
   ngOnInit() {
     this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
     this.getListarProductos();
   }
 

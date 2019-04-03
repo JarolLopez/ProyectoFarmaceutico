@@ -4,4 +4,5 @@ export interface productoInterface {
     cantidad?: number;
     fechaVencimiento?: Date;
     id?: string;
+    presentacion?:string;
 }

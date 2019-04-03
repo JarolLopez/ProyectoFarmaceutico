@@ -15,19 +15,19 @@
                 <div class="form-group">
                   <input type="email" name="email" class="form-control" placeholder="Email" [(ngModel)]="email" required minlength="8">
                 </div>
-                <div class="alert alert-danger" role="alert" *ngIf="email.touched && !email.valid">
-                  <div *ngIf="email.errors.required">se requiere correo electronico</div>
-                  <div *ngIf="email.errors.minlength">El correo electrónico debe tener al menos 8 caracteres</div>
-                </div>
+                 <!--  <div class="alert alert-danger" role="alert">-->
+                  
+                 <!--  </div>-->
 
                 <div class="form-group">
                   <input type="password" name="password" class="form-control" placeholder="Password" [(ngModel)]="password" required minlength="5"
                     maxlength="10">
                 </div>
-                <div class="alert alert-danger" role="alert" *ngIf="password.touched && !password.valid">
-                  <div *ngIf="password.errors.required">se requiere contraseña</div>
-                  <div *ngIf="password.errors.minlength">La contraseña debe tener al menos 5 caracteres</div>
-                </div>
+              <!--  <div class="alert alert-danger" role="alert">-->
+                  <!--*ngIf="password.touched && !password.valid"-->
+                <!--  <div *ngIf="password.errors.required">se requiere contraseña</div>-->
+               <!--  <div *ngIf="password.errors.minlength">La contraseña debe tener al menos 5 caracteres</div>--> 
+              <!--  </div>-->
                
               
                 
