@@ -5,6 +5,7 @@ import { auth } from 'firebase/app';
 
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { RegistrarseComponent } from '../components/registrarse/registrarse.component';
+import { CanActivate } from '@angular/router/src/utils/preactivation';
 
 @Injectable({
   providedIn: 'root'
@@ -13,9 +14,7 @@ export class AuthService {
 
   constructor(private afsAuth: AngularFireAuth, private afs: AngularFirestore) { }
  
-  loginGoogleUser() {
-  
-  }
+
   registerUser(email: string, pass: string) {
     return new Promise((resolve, reject) => {
       this.afsAuth.auth.createUserWithEmailAndPassword(email, pass)
@@ -31,6 +30,8 @@ export class AuthService {
         err => reject(err));
     });
   }
+ 
+ 
  
 
   logoutUser() {

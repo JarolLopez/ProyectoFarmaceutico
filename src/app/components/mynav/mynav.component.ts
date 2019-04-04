@@ -16,7 +16,6 @@ export class MynavComponent {
     );
 
   constructor(private breakpointObserver: BreakpointObserver) {}
-  public listBord: string = 'inicio';
-  public isLogged: boolean = false
+ 
 
 }

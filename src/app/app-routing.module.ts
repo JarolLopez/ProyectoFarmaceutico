@@ -12,14 +12,15 @@ import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { AgregarproducutoComponent } from './components/agregarproducuto/agregarproducuto.component';
 import { PresentacionComponent } from './components/presentacion/presentacion.component';
 import { VentasComponent } from './components/ventas/ventas.component';
+import { AuthguardarService } from './servicio/authguardar.service';
 
 
 const routes: Routes = [
   {path: '', component: InicioComponent},
-  {path: 'inicio', component: InicioComponent},
-  {path: 'registrarse', component: RegistrarseComponent},
+  {path: 'inicio', component: InicioComponent, canActivate:[AuthguardarService]},
+  {path: 'registrarse', component: RegistrarseComponent, canActivate:[AuthguardarService]},
   {path: 'login', component: LoginComponent},
-  {path: 'contacto', component: ContactoComponent},
+  {path: 'contacto', component: ContactoComponent , canActivate:[AuthguardarService]},
   {path: 'productos', component: ProductosComponent},
   {path: 'pedidos', component: PedidosComponent},
   {path: 'noticias', component: NoticiasComponent},

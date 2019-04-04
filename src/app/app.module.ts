@@ -44,6 +44,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { VentasComponent } from './components/ventas/ventas.component';
 import { ComentarioListComponent } from './components/comentario-list/comentario-list.component';
 import { ScrollDispatchModule, CdkScrollable, ScrollingModule } from '@angular/cdk/scrolling';
+import { AuthguardarService } from './servicio/authguardar.service';
+import { NoticiasListComponent } from './components/noticias-list/noticias-list.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +64,8 @@ import { ScrollDispatchModule, CdkScrollable, ScrollingModule } from '@angular/c
     AgregarproducutoComponent,
     PresentacionComponent,
     ComentarioListComponent,
+    NoticiasListComponent,
+
   
   
   ],
@@ -104,7 +108,7 @@ import { ScrollDispatchModule, CdkScrollable, ScrollingModule } from '@angular/c
   
  
   ],
-  providers: [ComentarioService, AngularFirestore,AngularFireAuth],
+  providers: [ComentarioService,AngularFirestore,AngularFireAuth],
   bootstrap: [AppComponent],
   entryComponents: [AgregarproducutoComponent, ProductosComponent, RegistrarseComponent, PresentacionComponent, 
   PedidosComponent, VentasComponent]
