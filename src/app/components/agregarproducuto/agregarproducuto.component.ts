@@ -18,10 +18,11 @@ import { ProductoService } from 'src/app/servicio/producto.service';
 })
 export class AgregarproducutoComponent implements OnInit {
   dataSource: any;
+  public presentacion;
 
   constructor(
-    public dataProducto: ProductoService,public dialog: MatDialog, private dataPresentacion: PresentacionService) { }
-    private presentaciones: presentacionInterface[];
+    public dataProducto: ProductoService,public dialog: MatDialog, public dataPresentacion: PresentacionService) { }
+    public presentaciones: presentacionInterface[];
 
  
   openDialog1() {
@@ -46,20 +47,20 @@ export class AgregarproducutoComponent implements OnInit {
   onSaveProducto(formProducto: NgForm): void {
     //Nuevo
     if(formProducto.valid){
-    if(formProducto.value.id==null)
-    {
-      console.log('id',formProducto.value.id);
-      this.dataProducto.AgregarProducto(formProducto.value);
-      formProducto.reset();
-      this.dialog.closeAll();
+      if(formProducto.value.id==null)
+      {
+        console.log('id',formProducto.value.id);
+        this.dataProducto.AgregarProducto(formProducto.value);
+        formProducto.reset();
+        this.dialog.closeAll();
+      }
+      else
+      {
+        this.dataProducto.ActualizarProducto(formProducto.value)
+        formProducto.reset();
+        this.dialog.closeAll();
+      }
     }
-    else
-    {
-      this.dataProducto.ActualizarProducto(formProducto.value)
-      formProducto.reset();
-      this.dialog.closeAll();
-    }
-  }
 }
 
  

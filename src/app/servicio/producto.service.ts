@@ -53,7 +53,7 @@ export class ProductoService {
     this.productosDocumentos.update(producto);
   }
 
-  borrarUsuario(idProducto: string): void {
+  borrarProducto(idProducto: string): void {
     this.productosDocumentos = this.afs.doc<productoInterface>(`productos/${idProducto}`);
     this.productosDocumentos.delete();
   }

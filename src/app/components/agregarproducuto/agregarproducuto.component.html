@@ -3,14 +3,14 @@
   <div><br></div><div><br></div>
   <button matTooltip="Agregar nueva presentación" class="btnpresentacion" color="primary" mat-raised-button (click)="openDialog1()"
   ><mat-icon class="buttom">add</mat-icon>Presentación</button>
-
-  <div>
-    <input [(ngModel)]="this.dataProducto.selectedProducto.id" name="id" type="hidden">
-  </div>
   
 
 <mat-card class="mymad">
   <form class="contenedor" name="formProducto" #formProducto="ngForm" (ngSubmit)="onSaveProducto(formProducto)">
+
+      <div>
+          <input [(ngModel)]="this.dataProducto.selectedProducto.id" name="id" type="hidden">
+        </div>
       
     <mat-form-field>
         <mat-label>Presentación</mat-label>

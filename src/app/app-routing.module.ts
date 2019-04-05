@@ -7,7 +7,6 @@ import { ProductosComponent } from './components/productos/productos.component';
 import { PedidosComponent } from './components/pedidos/pedidos.component';
 import { NoticiasComponent } from './components/noticias/noticias.component';
 import { RegistrarseComponent } from './components/registrarse/registrarse.component';
-import { ComprasComponent } from './components/compras/compras.component';
 import { ComentariosComponent } from './components/comentarios/comentarios.component';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { AgregarproducutoComponent } from './components/agregarproducuto/agregarproducuto.component';
@@ -26,7 +25,6 @@ const routes: Routes = [
   {path: 'pedidos', component: PedidosComponent},
   {path: 'noticias', component: NoticiasComponent},
   {path: 'ventas', component: VentasComponent},
-  {path: 'compras', component: ComprasComponent},
   {path: 'comentarios', component: ComentariosComponent},
   {path: 'usuarios', component: UsuariosComponent},
   {path: 'informes', component: InformesComponent},

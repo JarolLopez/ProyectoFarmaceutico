@@ -1,32 +1,13 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
-import { MatTableDataSource } from '@angular/material';
-import {MatPaginator, MatSort} from '@angular/material';
-import {MatDialog} from '@angular/material';
-
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-  {position: 11, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 12, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 13, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 14, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-];
-
+import { MatTableDataSource, MatSort } from '@angular/material';
+import {MatPaginator} from '@angular/material';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDialogConfig} from '@angular/material';
+import { Chain } from '@angular/compiler';
+import { Pipe, PipeTransform} from '@angular/core';
+import {MatIconModule} from '@angular/material/icon';
+import {ventasInterface} from '../../modelos/ventas.models';
+import {VentasService} from '../../servicio/ventas.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-ventas',
@@ -34,16 +15,29 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./ventas.component.css']
 })
 export class VentasComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  displayedColumns: string[] = ['descripcionProducto','codigoProducto', 'cantidad', 'precioUnitario', 'PrecioTotal', 'fechaVenta', 'direccion'];
+  dataSource = new MatTableDataSource<ventasInterface>();
+
   @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  constructor() { }
+  constructor(private dataVenta: VentasService) { }
 
-  ngOnInit() {  this.dataSource.paginator = this.paginator;
+  ngOnInit() {  
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+    this.getListarVentas();
+  }
+
+  getListarVentas(){
+    this.dataVenta.obtenerVentas()
+    .subscribe(ventas => {
+      this.dataSource.data = ventas;
+    })
   }
 
 }

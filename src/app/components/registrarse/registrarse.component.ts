@@ -20,12 +20,15 @@ import {AuthService } from '../../servicio/auth.service';
   styleUrls: ['./registrarse.component.css']
 })
 export class RegistrarseComponent implements OnInit {
+  
 
   constructor(private router: Router, private authService: AuthService,) { }
   @ViewChild('imageUser') inputImageUser: ElementRef;
 
   public email: string = '';
   public password: string = '';
+  public isError;
+  
 /*
   uploadPercent: Observable<number>;
   urlImage: Observable<string>;

@@ -20,9 +20,9 @@ export class NoticiasComponent implements OnInit {
 
 
  
- constructor(private service: DataserviceService,
-   private firestore: AngularFirestore,
-   private toastr: ToastrService) { }
+ constructor(public service: DataserviceService,
+   public firestore: AngularFirestore,
+   public toastr: ToastrService) { }
 
 
 

@@ -16,6 +16,7 @@ import {AngularFireModule} from 'angularfire2';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {environment} from '../environments/environment';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatSortModule} from '@angular/material/sort';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,7 +33,6 @@ import { ProductosComponent } from './components/productos/productos.component';
 import { PedidosComponent } from './components/pedidos/pedidos.component';
 import { NoticiasComponent } from './components/noticias/noticias.component';
 import { RegistrarseComponent } from './components/registrarse/registrarse.component';
-import { ComprasComponent } from './components/compras/compras.component';
 import { ComentariosComponent } from './components/comentarios/comentarios.component';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { AgregarproducutoComponent } from './components/agregarproducuto/agregarproducuto.component';
@@ -63,7 +63,6 @@ import { InformesComponent } from './components/informes/informes.component';
     NoticiasComponent,
     RegistrarseComponent,
     VentasComponent,
-    ComprasComponent,
     ComentariosComponent,
     UsuariosComponent,
     AgregarproducutoComponent,
@@ -112,7 +111,8 @@ import { InformesComponent } from './components/informes/informes.component';
     ToastrModule.forRoot(),
     MatGridListModule,
     ScrollingModule,
-    MatGridListModule
+    MatGridListModule,
+    MatSortModule
   
  
   ],

@@ -15,13 +15,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  public isError;
+  public onLoginGoogle;
 
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.email,
   ]);
 
-  constructor(public afAuth: AngularFireAuth, private router: Router, private authService: AuthService) { }
+  constructor(public afAuth: AngularFireAuth, public router: Router, public authService: AuthService) { }
   public  email: string 
   public  password: string  
 
