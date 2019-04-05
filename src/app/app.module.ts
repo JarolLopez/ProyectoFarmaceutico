@@ -46,7 +46,14 @@ import { ComentarioListComponent } from './components/comentario-list/comentario
 import { ScrollDispatchModule, CdkScrollable, ScrollingModule } from '@angular/cdk/scrolling';
 import { AuthguardarService } from './servicio/authguardar.service';
 import { NoticiasListComponent } from './components/noticias-list/noticias-list.component';
+<<<<<<< HEAD
 import { DetallepedidoComponent } from './detallepedido/detallepedido.component';
+=======
+import { InformesComponent } from './components/informes/informes.component';
+
+
+
+>>>>>>> 17ce23c187020e82a11ce3efdd6772bd278fac97
 
 @NgModule({
   declarations: [
@@ -66,7 +73,14 @@ import { DetallepedidoComponent } from './detallepedido/detallepedido.component'
     PresentacionComponent,
     ComentarioListComponent,
     NoticiasListComponent,
+<<<<<<< HEAD
     DetallepedidoComponent,
+=======
+    InformesComponent,
+
+ 
+  
+>>>>>>> 17ce23c187020e82a11ce3efdd6772bd278fac97
 
   
   

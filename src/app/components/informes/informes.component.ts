@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
-import { MatTableDataSource} from '@angular/material';
+import { MatTableDataSource } from '@angular/material';
 import { Chain } from '@angular/compiler';
 import { Pipe, PipeTransform} from '@angular/core';
 import {MatPaginator, MatSort} from '@angular/material';
@@ -10,26 +10,26 @@ import { LoginComponent } from '../login/login.component';
 import {MatIconModule} from '@angular/material/icon';
 import {productoInterface} from '../../modelos/producto.models';
 import {ProductoService} from '../../servicio/producto.service';
-import Swal from 'sweetalert2';
-
 
 @Component({
-  selector: 'app-productos',
-  templateUrl: './productos.component.html',
-  styleUrls: ['./productos.component.css']
+  selector: 'app-informes',
+  templateUrl: './informes.component.html',
+  styleUrls: ['./informes.component.css']
 })
-export class ProductosComponent implements OnInit {
+export class InformesComponent implements OnInit {
+
   displayedColumns: string[] = ['presentacion','numeroLote', 'precioUnitario', 'cantidad', 'fechaVencimiento', 'accion'];
   dataSource = new MatTableDataSource<productoInterface>();
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+
   constructor(public dialog: MatDialog, private dataProducto: ProductoService) { }
-    private productos: productoInterface[];
+  
+  private productos: productoInterface[];
 
   openDialog() {
     const dialogRef = this.dialog.open(AgregarproducutoComponent, {
@@ -44,53 +44,39 @@ export class ProductosComponent implements OnInit {
 
   ngOnInit() {
     this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
     this.getListarProductos();
   }
 
-  getListarProductos(){
-    this.dataProducto.obtenerProducto()
+  getListarProductos() {
+    let fecha = new Date(Date.now());
+    console.log(fecha);
+    //fecha.setDate(fecha.getDate());
+    let fechaVencimiento = new Date(fecha.getFullYear(), fecha.getMonth() + 1, fecha.getDay() + 15);
+    console.log(fechaVencimiento);
+    this.dataProducto.obtenerProductosPorVencerse(fechaVencimiento)
     .subscribe(productos => {
       this.dataSource.data = productos;
     })
   }
 
+  public estaVencido(fechaVencimiento) {
+    const fechaVencimiento2 = new Date(fechaVencimiento.seconds * 1000);
+    let fecha = new Date();
+    if(fechaVencimiento2 < fecha) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
   onActualizarProductos(producto: productoInterface) {
-   
     const dialogRef = this.dialog.open(AgregarproducutoComponent);
-    this.dataProducto.selectedProducto = Object.assign({},producto);
+    this.dataProducto.selectedProducto = Object.assign({},producto)
 
     dialogRef.afterClosed().subscribe(result => {
-<<<<<<< HEAD
       console.log(`Dialog result: ${result}`);
     });
   }
-=======
-    console.log(`Dialog result: ${result}`);
-  });
-}
 
-borrarProducto(idProducto: string): void{
-    
-  Swal.fire({
-    title: 'Está seguro de eliminar',
-    text:"Esta acción no se puede revertir",
-    type: 'warning',
-    showCancelButton: true,
-    confirmButtonColor: 'red',
-    cancelButtonColor: 'blue',
-    confirmButtonText: 'Estoy seguro'
-  }).then((result) =>{
-    if (result.value) {
-      this.dataProducto.borrarProducto(idProducto);
-      Swal.fire({
-        type: 'success',
-        title: 'Producto eliminado',
-        showConfirmButton: false,
-        timer: 1500
-      })
-    }
-  })
-}
->>>>>>> 003b70c8f76a4e9c9f4361feb88ba2839c35d48d
 }

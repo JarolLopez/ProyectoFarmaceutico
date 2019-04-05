@@ -30,6 +30,18 @@ export class ProductoService {
     }));
   }
 
+  obtenerProductosPorVencerse(fecha:Date) {
+    this.productoColeccion = this.afs.collection<productoInterface>('productos', ref => ref.where('fechaVencimiento', '<=', fecha));
+    return this.productos = this.productoColeccion.snapshotChanges()
+    .pipe(map(changes => { 
+      return changes.map(action => {
+        const data = action.payload.doc.data() as productoInterface;
+        data.id = action.payload.doc.id;
+        return data;
+      });
+    }));
+  }
+
   AgregarProducto(producto: productoInterface): void {
     delete producto.id;
     this.productoColeccion.add(producto);
