@@ -46,6 +46,7 @@ import { ComentarioListComponent } from './components/comentario-list/comentario
 import { ScrollDispatchModule, CdkScrollable, ScrollingModule } from '@angular/cdk/scrolling';
 import { AuthguardarService } from './servicio/authguardar.service';
 import { NoticiasListComponent } from './components/noticias-list/noticias-list.component';
+import { DetallepedidoComponent } from './detallepedido/detallepedido.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { NoticiasListComponent } from './components/noticias-list/noticias-list.
     PresentacionComponent,
     ComentarioListComponent,
     NoticiasListComponent,
+    DetallepedidoComponent,
 
   
   
@@ -111,6 +113,6 @@ import { NoticiasListComponent } from './components/noticias-list/noticias-list.
   providers: [ComentarioService,AngularFirestore,AngularFireAuth],
   bootstrap: [AppComponent],
   entryComponents: [AgregarproducutoComponent, ProductosComponent, RegistrarseComponent, PresentacionComponent, 
-  PedidosComponent, VentasComponent]
+  PedidosComponent, VentasComponent, DetallepedidoComponent ]
 })
 export class AppModule { }
