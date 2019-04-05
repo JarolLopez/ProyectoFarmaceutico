@@ -14,7 +14,7 @@ import { AgregarproducutoComponent } from './components/agregarproducuto/agregar
 import { PresentacionComponent } from './components/presentacion/presentacion.component';
 import { VentasComponent } from './components/ventas/ventas.component';
 import { AuthguardarService } from './servicio/authguardar.service';
-
+import { InformesComponent } from './components/informes/informes.component';
 
 const routes: Routes = [
   {path: '', component: InicioComponent},
@@ -29,9 +29,11 @@ const routes: Routes = [
   {path: 'compras', component: ComprasComponent},
   {path: 'comentarios', component: ComentariosComponent},
   {path: 'usuarios', component: UsuariosComponent},
+  {path: 'informes', component: InformesComponent},
   {path: '**', component: InicioComponent},
   {path: 'agregarproducuto', component: AgregarproducutoComponent},
-  {path: 'presentacion', component: PresentacionComponent}
+  {path: 'presentacion', component: PresentacionComponent},
+ 
 ];
 
 @NgModule({

@@ -46,6 +46,10 @@ import { ComentarioListComponent } from './components/comentario-list/comentario
 import { ScrollDispatchModule, CdkScrollable, ScrollingModule } from '@angular/cdk/scrolling';
 import { AuthguardarService } from './servicio/authguardar.service';
 import { NoticiasListComponent } from './components/noticias-list/noticias-list.component';
+import { InformesComponent } from './components/informes/informes.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -66,6 +70,10 @@ import { NoticiasListComponent } from './components/noticias-list/noticias-list.
     PresentacionComponent,
     ComentarioListComponent,
     NoticiasListComponent,
+    InformesComponent,
+
+ 
+  
 
   
   

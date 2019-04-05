@@ -12,11 +12,12 @@ import {productoInterface} from '../../modelos/producto.models';
 import {ProductoService} from '../../servicio/producto.service';
 
 @Component({
-  selector: 'app-productos',
-  templateUrl: './productos.component.html',
-  styleUrls: ['./productos.component.css']
+  selector: 'app-informes',
+  templateUrl: './informes.component.html',
+  styleUrls: ['./informes.component.css']
 })
-export class ProductosComponent implements OnInit {
+export class InformesComponent implements OnInit {
+
   displayedColumns: string[] = ['presentacion','numeroLote', 'precioUnitario', 'cantidad', 'fechaVencimiento', 'accion'];
   dataSource = new MatTableDataSource<productoInterface>();
 
@@ -25,8 +26,10 @@ export class ProductosComponent implements OnInit {
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+
   constructor(public dialog: MatDialog, private dataProducto: ProductoService) { }
-    private productos: productoInterface[];
+  
+  private productos: productoInterface[];
 
   openDialog() {
     const dialogRef = this.dialog.open(AgregarproducutoComponent, {
@@ -44,11 +47,27 @@ export class ProductosComponent implements OnInit {
     this.getListarProductos();
   }
 
-  getListarProductos(){
-    this.dataProducto.obtenerProducto()
+  getListarProductos() {
+    let fecha = new Date(Date.now());
+    console.log(fecha);
+    //fecha.setDate(fecha.getDate());
+    let fechaVencimiento = new Date(fecha.getFullYear(), fecha.getMonth() + 1, fecha.getDay() + 15);
+    console.log(fechaVencimiento);
+    this.dataProducto.obtenerProductosPorVencerse(fechaVencimiento)
     .subscribe(productos => {
       this.dataSource.data = productos;
     })
+  }
+
+  public estaVencido(fechaVencimiento) {
+    const fechaVencimiento2 = new Date(fechaVencimiento.seconds * 1000);
+    let fecha = new Date();
+    if(fechaVencimiento2 < fecha) {
+      return true;
+    }
+    else {
+      return false;
+    }
   }
 
   onActualizarProductos(producto: productoInterface) {
@@ -59,4 +78,5 @@ export class ProductosComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
+
 }

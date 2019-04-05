@@ -1,0 +1,71 @@
+<br>
+<button matTooltip="Agregar nuevo producto" class="buttom1"  color="primary" mat-raised-button (click)="openDialog()"
+><mat-icon class="buttom">add</mat-icon>Productos</button>
+
+<mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtrar resultados">
+</mat-form-field>
+
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" >
+    
+  <!-- Position Column -->
+  <ng-container matColumnDef="presentacion">
+    <th mat-header-cell *matHeaderCellDef> Presentación </th>
+    <td mat-cell *matCellDef="let element"> {{element.presentacion}} </td>
+  </ng-container>
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="numeroLote">
+    <th mat-header-cell *matHeaderCellDef> Lote </th>
+    <td mat-cell *matCellDef="let element"> {{element.numeroLote}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="precioUnitario">
+    <th mat-header-cell *matHeaderCellDef> Precio </th>
+    <td mat-cell *matCellDef="let element"> {{element.precioUnitario}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="cantidad">
+    <th mat-header-cell *matHeaderCellDef> Existencia </th>
+    <td mat-cell *matCellDef="let element"> {{element.cantidad}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="fechaVencimiento">
+    <th mat-header-cell *matHeaderCellDef> Vence </th>
+    <td mat-cell *matCellDef="let element"> {{element.fechaVencimiento.toDate()| date: 'dd/MM/yyyy'}} </td>
+  </ng-container>
+ 
+  <ng-container matColumnDef="accion">
+    <th mat-header-cell *matHeaderCellDef>Estado</th>
+    <td mat-cell *matCellDef="let element">
+        <ng-container *ngIf="this.estaVencido(element.fechaVencimiento); else elseTemplate">
+          <b style="color: red;">Vencido</b>
+        </ng-container>
+        <ng-template #elseTemplate>
+          <b style="color:#FFAB00;">Por vencerse</b>
+        </ng-template>
+    </td>
+  </ng-container>
+  
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+</table>
+
+<mat-paginator 
+  class="paginator"
+  [length]="100"
+  [pageSize]="10"
+  [pageSizeOptions]="[5, 10, 25, 100]"
+>
+</mat-paginator>
+
+<br>
+<div>
+  <br>
+</div>
