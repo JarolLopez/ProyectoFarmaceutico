@@ -21,13 +21,16 @@
         </div>
       </mat-list>-->
 
-      <a mat-list-item class="listBord" routerLink="/productos"><mat-icon class="color">local_parking</mat-icon>Productos</a>
-      <a mat-list-item class="listBord" routerLink="/comentarios"><mat-icon class="color">store</mat-icon>Comentarios</a>
-      <a mat-list-item class="listBord" routerLink="/noticias"><mat-icon class="color">keyboard_hide</mat-icon>noticias</a>
-      <a mat-list-item class="listBord" routerLink="/pedidos"><mat-icon class="color">healing</mat-icon>Pedidos</a>
-      <a mat-list-item class="listBord" routerLink="/ventas"><mat-icon class="color">attach_money</mat-icon>Ventas</a>
-      <a mat-list-item class="listBord" routerLink="/usuarios"><mat-icon class="color">person_pin</mat-icon>Usuarios</a>
-      <a mat-list-item class="listBord" routerLink="/informes"><mat-icon class="color">receipt</mat-icon>informeproductos</a>
+      <ng-container *ngIf="this.isAdmin; else elseTemplate">
+        <a mat-list-item class="listBord" routerLink="/productos"><mat-icon class="color">local_parking</mat-icon>Productos</a>
+        <a mat-list-item class="listBord" routerLink="/comentarios"><mat-icon class="color">store</mat-icon>Comentarios</a>
+        <a mat-list-item class="listBord" routerLink="/noticias"><mat-icon class="color">keyboard_hide</mat-icon>noticias</a>
+        <a mat-list-item class="listBord" routerLink="/pedidos"><mat-icon class="color">healing</mat-icon>Pedidos</a>
+        <a mat-list-item class="listBord" routerLink="/ventas"><mat-icon class="color">attach_money</mat-icon>Ventas</a>
+        <a mat-list-item class="listBord" routerLink="/usuarios"><mat-icon class="color">person_pin</mat-icon>Usuarios</a>
+        <a mat-list-item class="listBord" routerLink="/informes"><mat-icon class="color">receipt</mat-icon>informeproductos</a>
+      </ng-container>
+
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content fixedInViewport="true">
@@ -43,13 +46,21 @@
       
       <span class="Span">
         <img class="logo" src="./../../assets/Imagenes/logotipo.png">
-       </span>
+      </span>
 
        
-          <h2 class="titulo">Farmacia FarmaAhorro</h2>
-     
- 
-            <a mat-list-item routerLink="/login"><mat-icon class="Init" matTooltip="Iniciar Sesión">account_circle</mat-icon></a>
+      <h2 class="titulo">Farmacia FarmaAhorro</h2>
+  
+      <ng-container *ngIf="this.isAuth; else elseTemplate">
+        <a mat-list-item (click)="this.logOut()">
+          <mat-icon class="Init" matTooltip="Cerrar sesión">account_circle</mat-icon>
+        </a>
+      </ng-container>
+      <ng-template #elseTemplate>
+        <a mat-list-item routerLink="/login">
+          Inicia Sesión
+        </a>
+      </ng-template>
            
     </mat-toolbar>
     <!-- Add Content Here -->

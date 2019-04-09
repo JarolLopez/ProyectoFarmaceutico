@@ -39,7 +39,6 @@ export class LoginComponent implements OnInit {
    .then((res) =>{
     this.router.navigate(['/inicio']);
   }).catch(err=>console.log('err', err.message));
-
   }
 
  onLogout() {

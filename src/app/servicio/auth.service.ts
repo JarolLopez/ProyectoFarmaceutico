@@ -18,7 +18,24 @@ export class AuthService {
   registerUser(email: string, pass: string) {
     return new Promise((resolve, reject) => {
       this.afsAuth.auth.createUserWithEmailAndPassword(email, pass)
-      .then(userData => resolve(userData),
+      .then(userData => {
+        /*resolve(userData)*/
+        // Aquí guardamos los datos para nosotros
+        /*this
+        .afs
+        .collection('users')
+        .doc(userData.user.uid)
+        .set({
+          rol: 'cliente',
+        })
+        .then(() => resolve(userData))
+        .catch(error => reject(error));*/
+
+        resolve(userData.user.updateProfile({
+          displayName: 'cliente',
+        }));
+
+      },
       err => reject(err));
     });
   }
@@ -26,13 +43,14 @@ export class AuthService {
   loginEmailUser(email: string, pass: string) {
     return new Promise((resolve, reject) => {
       this.afsAuth.auth.signInWithEmailAndPassword(email, pass)
-        .then(userData => resolve(userData),
+        .then(userData => {
+
+          resolve(userData);
+
+        },
         err => reject(err));
     });
   }
- 
- 
- 
 
   logoutUser() {
     return this.afsAuth.auth.signOut();
@@ -41,10 +59,5 @@ export class AuthService {
   isAuth() {
     return this.afsAuth.authState.pipe(map(auth => auth));
   }
-
- 
-
-
-
 
 }

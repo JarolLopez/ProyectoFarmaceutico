@@ -107,3 +107,16 @@ color:blue;
 .presentacion{
    text-align: center;
 }
+
+
+footer{
+   
+    border-top-style: solid;
+    padding: 20px 0;
+    text-align: center;
+    background-color: green;
+    font-size: 10px;
+    position:center;
+    background-color: black;
+
+ }
