@@ -23,6 +23,8 @@ div#Principal{
     width: 30%;
     height: 100%;
     background-color:white;
+    overflow: auto;
+    margin-right: 0%;
 }
 .example-container {
     width: 400px;
@@ -31,17 +33,22 @@ div#Principal{
     border: 1px solid #555;
   }
  
-div#noticias{
+/*div#noticias{
     width: 69.5%;
     height: 25%;
   
     text-align: center;
 }
+/*
 /* @media (min-width: 780px){
     div#noticias{
         column-count: 2;
     }
 } */
+.comentas{
+    position: center;
+    text-align: center;
+}
 
 div#secundario  {
     margin-top: 0.5%;
@@ -120,3 +127,7 @@ footer{
     background-color: black;
 
  }
+.visitenos{
+    text-align: center;
+    background: white;
+}

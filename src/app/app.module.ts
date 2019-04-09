@@ -46,7 +46,7 @@ import { ComentarioListComponent } from './components/comentario-list/comentario
 import { ScrollDispatchModule, CdkScrollable, ScrollingModule } from '@angular/cdk/scrolling';
 import { AuthguardarService } from './servicio/authguardar.service';
 import { NoticiasListComponent } from './components/noticias-list/noticias-list.component';
-import { DetallepedidoComponent } from './detallepedido/detallepedido.component';
+import { DetallepedidoComponent } from './components/detallepedido/detallepedido.component';
 import { InformesComponent } from './components/informes/informes.component';
 
 
