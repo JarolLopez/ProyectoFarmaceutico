@@ -4,7 +4,7 @@
   <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
     <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
 
-
+<br>
     <div class="form-group">
       <input name="email" #email="ngModel" [(ngModel)]="service.formData.email" class="form-control" placeholder="email" >
       <div *ngIf="email.invalid && email.touched" class="validation-error">ingrese su correo.</div>
@@ -17,7 +17,7 @@
       
  
     <div class="form-group">
-      <input name="informacion" #informacion="ngModel" [(ngModel)]="service.formData.informacion" class="form-control" placeholder="informacion">
+      <input name="informacion" #informacion="ngModel" [(ngModel)]="service.formData.informacion" class="form-control" placeholder="Dejar comentario">
 
     </div>
   
@@ -30,6 +30,7 @@
       <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-info">ENVIAR</button>
     </div>
   </form>
+  <br>
   
 </div>
 

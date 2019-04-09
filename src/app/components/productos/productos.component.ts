@@ -61,11 +61,6 @@ export class ProductosComponent implements OnInit {
     this.dataProducto.selectedProducto = Object.assign({},producto);
 
     dialogRef.afterClosed().subscribe(result => {
-<<<<<<< HEAD
-      console.log(`Dialog result: ${result}`);
-    });
-  }
-=======
     console.log(`Dialog result: ${result}`);
   });
 }
@@ -92,5 +87,4 @@ borrarProducto(idProducto: string): void{
     }
   })
 }
->>>>>>> 003b70c8f76a4e9c9f4361feb88ba2839c35d48d
 }

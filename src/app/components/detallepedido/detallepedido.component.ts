@@ -5,10 +5,10 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatDialog} from '@angular/material';
 
 import { MatIconModule } from '@angular/material/icon';
-import { detallepedidoInterface } from '../modelos/detallepedido.models';
-import { pedidoInterface } from '../modelos/pedido.models';
-import { DetallePedidoService } from '../servicio/detalle-pedido.service';
-import { PedidoService } from '../servicio/pedido.service';
+import { detallepedidoInterface } from '../../modelos/detallepedido.models';
+import { pedidoInterface } from '../../modelos/pedido.models';
+import { DetallePedidoService } from '../../servicio/detalle-pedido.service';
+import { PedidoService } from '../../servicio/pedido.service';
 
 @Component({
   selector: 'app-detallepedido',

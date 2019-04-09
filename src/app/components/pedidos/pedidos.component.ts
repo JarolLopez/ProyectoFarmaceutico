@@ -3,7 +3,7 @@ import { MatTableDataSource } from '@angular/material';
 import {MatPaginator, MatSort} from '@angular/material';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatDialog} from '@angular/material';
-import { DetallepedidoComponent } from '../../detallepedido/detallepedido.component';
+import { DetallepedidoComponent } from '../detallepedido/detallepedido.component';
 
 import {MatIconModule} from '@angular/material/icon';
 import {pedidoInterface} from '../../modelos/pedido.models';

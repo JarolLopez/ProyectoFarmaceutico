@@ -6,45 +6,29 @@
 
     <div class="form-group">
         <input name="titulo" #titulo="ngModel" [(ngModel)]="service.formData.titulo" class="form-control" placeholder="titulo">
-  
-      </div>
-
-    
+    </div>
 
     <div class="form-group">
         <input name="imagen" #imagen="ngModel" [(ngModel)]="service.formData.imagen" class="form-control" placeholder="imagen">
-  
-      </div>
+    </div>
 
     <div class="form-group">
         <input type="hidden" [(ngModel)]="service.formData.fecha" name="fecha" value="{{fecha}}"   class="form-control"  placeholder="fecha">
-  
-      </div>
+    </div>
 
-      <div class="form-group">
-          <input name="contenido" #contenido="ngModel" [(ngModel)]="service.formData.contenido" class="form-control" placeholder="contenido" >
-          <div *ngIf="contenido.invalid && contenido.touched" class="validation-error">ingrese la noticia.</div>
-        </div>
-      
- 
-   
-  
-    
-  
-    
+    <div class="form-group">
+        <input name="contenido" #contenido="ngModel" [(ngModel)]="service.formData.contenido" class="form-control" placeholder="contenido" >
+        <div *ngIf="contenido.invalid && contenido.touched" class="validation-error">ingrese la noticia.</div>
+    </div>
 
-
-    
-      
     <div class="form-group">
         <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-info">ENVIAR</button>
-      </div>
-    </form>
-    
-  </div>
+    </div>
+  </form> 
+</div>
   
-  <mat-divider class="dividir"> </mat-divider> 
+    <mat-divider class="dividir"> </mat-divider> 
   
-  <div class="col-md-12">
+    <div class="col-md-12">
       <app-noticias-list></app-noticias-list>
     </div>
