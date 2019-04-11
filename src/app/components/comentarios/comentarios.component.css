@@ -1,5 +1,6 @@
 .container{
     background: rgb(212, 209, 209);
+    width: 90%;
 }
 .form-group{
     margin-top: 5px;

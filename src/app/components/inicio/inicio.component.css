@@ -49,6 +49,12 @@ div#Principal{
     position: center;
     text-align: center;
 }
+.noticias{
+    position: center;
+    text-align: center;
+    color:#1565C0;
+}
+
 
 div#secundario  {
     margin-top: 0.5%;
@@ -116,18 +122,10 @@ color:blue;
 }
 
 
-footer{
-   
-    border-top-style: solid;
-    padding: 20px 0;
-    text-align: center;
-    background-color: green;
-    font-size: 10px;
-    position:center;
-    background-color: black;
 
- }
 .visitenos{
+    border-top-style: solid;
+    background-color: black;
     text-align: center;
     background: white;
 }

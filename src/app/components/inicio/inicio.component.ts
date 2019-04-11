@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from './../../servicio/auth.service';
 
 @Component({
   selector: 'app-inicio',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
 
-  constructor() { }
+  public isAuth:Boolean = false;
+
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
+    this.onAuth();
+  }
+
+  onAuth(): void {
+    this.authService.isAuth().subscribe(auth => {
+      if(auth) {
+        this.isAuth = true;
+      }
+      else {
+        this.isAuth = false;
+      }
+    });
   }
 
 }
