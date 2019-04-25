@@ -40,6 +40,7 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['/inicio']);
   }).catch(err=>console.log('err', err.message));
   }
+  
 
  onLogout() {
    this.authService.logoutUser();

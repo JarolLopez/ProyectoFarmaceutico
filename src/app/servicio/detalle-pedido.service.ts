@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import {AngularFirestore, AngularFirestoreCollection,AngularFirestoreDocument} from '@angular/fire/firestore';
 import { detallepedidoInterface } from '../modelos/detallepedido.models';
-import {Observable} from 'rxjs/internal/Observable';
-import {map} from 'rxjs/operators';
+import { pedidoInterface } from '../modelos/pedido.models';
+import { ventaInterface } from '../modelos/ventas.model';
+import { Observable } from 'rxjs/internal/Observable';
+import { map } from 'rxjs/operators';
 
 
 @Injectable({
@@ -16,7 +18,6 @@ export class DetallePedidoService {
   private pedidosDocumento: AngularFirestoreDocument<detallepedidoInterface>;
   private pedido: Observable<detallepedidoInterface>;
   public selectedPedido: detallepedidoInterface = {
-    
   };
 
   obtenerPedido(pedidoId){
@@ -30,4 +31,32 @@ export class DetallePedidoService {
       });
     }));
   }
+
+  guardarVenta(pedidoId) {
+    const pedidoCollection = this.afs.collection<pedidoInterface>('pedido');
+    console.log('ID: ', pedidoId)
+    pedidoCollection.doc(pedidoId).snapshotChanges()
+    .pipe(map(changes => {
+
+      console.log('Doc: ', changes);
+      const pedido:pedidoInterface = { ...changes.payload.data() }
+      pedido.entregado = true;
+      pedidoCollection.doc(pedidoId).update(pedido)
+
+      const ventaCollection = this.afs.collection<ventaInterface>('venta');
+      let venta:ventaInterface;
+      venta.id = pedido.id;
+      venta.numeroVenta = pedido.numeroPedido;
+      venta.fechaVenta = pedido.fechaPedido;
+      venta.usuario = pedido.usuario;
+      venta.direccion = pedido.direccion;
+      console.log('Guardado!!!!!')
+      ventaCollection.add(venta)
+      .then(() => {
+        console.log('Guardado!!!!!')
+      })
+      
+    }))
+  }
+
 }

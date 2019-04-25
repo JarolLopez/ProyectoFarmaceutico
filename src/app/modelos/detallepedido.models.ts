@@ -4,4 +4,5 @@ export interface detallepedidoInterface {
     precioUnitario?: string;
     presentacion?: string;
     cantidad?: number;
+    entregado?: boolean;
 }

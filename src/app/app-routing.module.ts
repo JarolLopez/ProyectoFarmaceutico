@@ -18,7 +18,7 @@ import { InformesComponent } from './components/informes/informes.component';
 const routes: Routes = [
   {path: '', component: InicioComponent},
   {path: 'inicio', component: InicioComponent, canActivate:[AuthguardarService]},
-  {path: 'registrarse', component: RegistrarseComponent, canActivate:[AuthguardarService]},
+  {path: 'registrarse', component: RegistrarseComponent},
   {path: 'login', component: LoginComponent},
   {path: 'contacto', component: ContactoComponent , canActivate:[AuthguardarService]},
   {path: 'productos', component: ProductosComponent},
