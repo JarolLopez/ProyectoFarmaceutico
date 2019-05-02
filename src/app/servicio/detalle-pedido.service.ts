@@ -14,14 +14,18 @@ export class DetallePedidoService {
 
   constructor (private afs: AngularFirestore) { }
   private pedidoColeccion: AngularFirestoreCollection<detallepedidoInterface>;
+  private pedidoColeccion2: AngularFirestoreCollection<pedidoInterface>;
   private pedidos: Observable<detallepedidoInterface[]>;
+  private pedidos2: Observable<pedidoInterface[]>;
   private pedidosDocumento: AngularFirestoreDocument<detallepedidoInterface>;
   private pedido: Observable<detallepedidoInterface>;
   public selectedPedido: detallepedidoInterface = {
   };
 
   obtenerPedido(pedidoId){
-    this.pedidoColeccion = this.afs.collection<detallepedidoInterface>('pedido').doc(pedidoId).collection('detallePedido');
+    this.pedidoColeccion = this.afs.collection<detallepedidoInterface>('pedido')
+    .doc(pedidoId)
+    .collection('detallePedido');
     return this.pedidos = this.pedidoColeccion.snapshotChanges()
     .pipe(map(changes => { 
       return changes.map(action => {
@@ -33,30 +37,25 @@ export class DetallePedidoService {
   }
 
   guardarVenta(pedidoId) {
-    const pedidoCollection = this.afs.collection<pedidoInterface>('pedido');
-    console.log('ID: ', pedidoId)
-    pedidoCollection.doc(pedidoId).snapshotChanges()
-    .pipe(map(changes => {
 
-      console.log('Doc: ', changes);
-      const pedido:pedidoInterface = { ...changes.payload.data() }
+    this.afs.collection('pedido').doc(pedidoId).get().toPromise().then((changes) => {
+      const pedido:pedidoInterface = { ...changes.data() }
       pedido.entregado = true;
-      pedidoCollection.doc(pedidoId).update(pedido)
+      console.log("Pedido: ", pedido)
+      this.afs.collection('pedido').doc(pedidoId).update(pedido)
 
       const ventaCollection = this.afs.collection<ventaInterface>('venta');
-      let venta:ventaInterface;
-      venta.id = pedido.id;
+      let venta:ventaInterface = {};
+      venta.id = pedidoId;
       venta.numeroVenta = pedido.numeroPedido;
       venta.fechaVenta = pedido.fechaPedido;
       venta.usuario = pedido.usuario;
       venta.direccion = pedido.direccion;
-      console.log('Guardado!!!!!')
-      ventaCollection.add(venta)
+      ventaCollection.doc(pedidoId).set(venta)
       .then(() => {
         console.log('Guardado!!!!!')
       })
-      
-    }))
+    })
   }
 
 }
