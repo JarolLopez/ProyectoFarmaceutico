@@ -1,6 +1,7 @@
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Component, OnInit } from '@angular/core';
 import { ComentarioService } from '../../servicio/comentario.service';
+import {auth} from 'firebase/app'
 
 import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
@@ -14,6 +15,7 @@ export class ComentariosComponent implements OnInit {
   f = new Date();
    fecha=this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
 
+   public emailAct: string = auth().currentUser.email;
  
 
   
@@ -27,6 +29,7 @@ export class ComentariosComponent implements OnInit {
    
     this.resetForm();
     this.service.formData.fecha=this.fecha;
+    console.log('Email',auth().currentUser.email);
   }
 
   resetForm(form?: NgForm) {
@@ -37,7 +40,7 @@ export class ComentariosComponent implements OnInit {
     }
     this.service.formData = {
      id:null,
-      email: '',
+      email: this.emailAct,
       fecha: this.fecha,
       informacion: '',
   

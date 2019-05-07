@@ -3,6 +3,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { ToastrService } from 'ngx-toastr';
 import {DataserviceService} from '../../servicio/dataservice.service';
 import {noticiasinterface} from 'src/app/modelos/noticias.models';
+import { AuthService } from 'src/app/servicio/auth.service';
 
 
 @Component({
@@ -16,9 +17,15 @@ export class NoticiasListComponent implements OnInit {
     private firestore: AngularFirestore,
     private toastr:ToastrService) { }
 
+   
 
+public admin=false; 
   
   ngOnInit() {
+
+    if(localStorage.getItem('rol')==='admin'){
+      this.admin=true;
+    }
    
     this.service.getnoticias().subscribe(actionArray => {
       this.list = actionArray.map(item => {
@@ -29,7 +36,7 @@ export class NoticiasListComponent implements OnInit {
       })
     });
   }
-
+  
   onEdit(com:noticiasinterface) {
     this.service.formData = Object.assign({}, com);
   }

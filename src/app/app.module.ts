@@ -48,6 +48,7 @@ import { AuthguardarService } from './servicio/authguardar.service';
 import { NoticiasListComponent } from './components/noticias-list/noticias-list.component';
 import { DetallepedidoComponent } from './components/detallepedido/detallepedido.component';
 import { InformesComponent } from './components/informes/informes.component';
+import { GuardarpedidoComponent } from './components/guardarpedido/guardarpedido.component';
 
 
 
@@ -72,6 +73,7 @@ import { InformesComponent } from './components/informes/informes.component';
     NoticiasListComponent,
     DetallepedidoComponent,
     InformesComponent,
+    GuardarpedidoComponent,
 
  
   

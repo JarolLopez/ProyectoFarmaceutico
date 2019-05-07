@@ -20,8 +20,13 @@ export class ComentarioListComponent implements OnInit {
     private toastr:ToastrService) { }
 
 
+    public admin=false; 
   
   ngOnInit() {
+
+    if(localStorage.getItem('rol')==='admin'){
+      this.admin=true;
+    }
    
     this.service.getComentario().subscribe(actionArray => {
       this.list = actionArray.map(item => {

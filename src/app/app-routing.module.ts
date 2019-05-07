@@ -14,6 +14,7 @@ import { PresentacionComponent } from './components/presentacion/presentacion.co
 import { VentasComponent } from './components/ventas/ventas.component';
 import { AuthguardarService } from './servicio/authguardar.service';
 import { InformesComponent } from './components/informes/informes.component';
+import { GuardarpedidoComponent } from './components/guardarpedido/guardarpedido.component';
 
 const routes: Routes = [
   {path: '', component: InicioComponent},
@@ -31,7 +32,7 @@ const routes: Routes = [
   {path: '**', component: InicioComponent},
   {path: 'agregarproducuto', component: AgregarproducutoComponent},
   {path: 'presentacion', component: PresentacionComponent},
- 
+  {path: 'guardarpedido', component: GuardarpedidoComponent}
 ];
 
 @NgModule({

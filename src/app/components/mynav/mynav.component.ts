@@ -40,9 +40,11 @@ export class MynavComponent {
         console.log('displayName', displayName);
         if(displayName === 'admin') {
           this.isAdmin = true;
+          localStorage.setItem('rol','admin')
         }
         else {
           this.isAdmin = false;
+          localStorage.setItem('rol','cliente');
         }
       }
       else {

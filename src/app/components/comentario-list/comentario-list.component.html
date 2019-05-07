@@ -2,7 +2,7 @@
   <div style="color:blue" (click)="onEdit(com)">{{com.email}}</div>
   <p (click)="onEdit(com)">{{com.fecha}}</p>
   <p (click)="onEdit(com)">{{com.informacion}}</p>
-  <div><a class=" btn text-danger"(click)="onDelete(com.id)">Eliminar<i class="fa fa-trash"></i></a></div>
+  <div><a *ngIf="admin===true" class=" btn text-danger"(click)="onDelete(com.id)">Eliminar<i class="fa fa-trash"></i></a></div>
   <!-- <div><a class=" btn text-danger"   (click)="onDelete(com.id)">Elimminar<i class="fa fa-trash"></i></a></div>-->
   <mat-divider> </mat-divider> 
 </div>

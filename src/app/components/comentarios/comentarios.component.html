@@ -6,7 +6,7 @@
 
 <br>
     <div class="form-group">
-      <input name="email" #email="ngModel" [(ngModel)]="service.formData.email" class="form-control" placeholder="email" >
+      <input type="hidden" name="email" #email="ngModel" [(ngModel)]="service.formData.email" class="form-control" placeholder="email" >
       <div *ngIf="email.invalid && email.touched" class="validation-error">ingrese su correo.</div>
     </div>
 

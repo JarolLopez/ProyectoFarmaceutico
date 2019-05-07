@@ -12,13 +12,13 @@
           <input [(ngModel)]="this.dataProducto.selectedProducto.id" name="id" type="hidden">
         </div>
       
-    <mat-form-field>
-        <mat-label>Presentación</mat-label>
-        <mat-select [(ngModel)]="this.dataProducto.selectedProducto.presentacion" name="presentacion">
-          <mat-option placeholder="NombreP" *ngFor="let presentacion of presentaciones" [value]="presentacion.descripcion">
-            {{presentacion.descripcion}}
-          </mat-option>
-        </mat-select>
+      <mat-form-field>
+          <mat-label>Presentación</mat-label>
+            <mat-select [(ngModel)]="this.dataProducto.selectedProducto.presentacion" name="presentacion">
+              <mat-option placeholder="NombreP" *ngFor="let presentacion of presentaciones" [value]="presentacion.descripcion">
+                {{presentacion.descripcion}}
+              </mat-option>
+            </mat-select>
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
@@ -26,18 +26,19 @@
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-          <input  [(ngModel)]="this.dataProducto.selectedProducto.precioUnitario" name="precioUnitario" required type="number" class= "example-form" matInput placeholder="Precio del producto" value="">
-        </mat-form-field>
+        <input  [(ngModel)]="this.dataProducto.selectedProducto.precioUnitario" name="precioUnitario" required type="number" class= "example-form" matInput placeholder="Precio del producto" value="">
+      </mat-form-field>
 
-        <mat-form-field class="example-full-width">
-          <input  [(ngModel)]="this.dataProducto.selectedProducto.cantidad" name="cantidad" required type="number" class= "example-form" matInput placeholder="Cantidad del producto" value="">
-        </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input  [(ngModel)]="this.dataProducto.selectedProducto.cantidad" name="cantidad" required type="number" class= "example-form" matInput placeholder="Cantidad del producto" value="">
+      </mat-form-field>
 
-        <mat-form-field>
-            <input [(ngModel)]="this.dataProducto.selectedProducto.fechaVencimiento" name="fechaVencimiento" required  matInput [matDatepicker]="picker" placeholder="Fecha de Vencimiento">
+      <mat-form-field>
+          <input [(ngModel)]="this.dataProducto.selectedProducto.fechaVencimiento" name="fechaVencimiento" required  matInput [matDatepicker]="picker" placeholder="Fecha de Vencimiento">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
+          <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <h6></h6>
 
     <button type="submit" class="btnguardar">Guardar</button>
   </form>
