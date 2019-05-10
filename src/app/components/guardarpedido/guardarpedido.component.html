@@ -1,3 +1,85 @@
+<mat-card>
+  <div>
+    <h1 style="text-align:center">Lista de productos</h1>
+  </div>
+  <div class="micard">
+  <button mat-raised-button color="primary" class="myButton" *ngFor="let producto of productos" (click)="onAddProduct(producto)">
+     {{producto.presentacion}} // C$  {{producto.precioUnitario}}
+  </button>
+    
+  </div>
+</mat-card>
+<div class="row">
+<div class="table">
+<table style="width:600px">
+  <thead style="background-color:darkgray">
+  <tr>
+    <td>
+      <strong>Nombre</strong>
+    </td>
+    <td>
+      <strong>Precio</strong>
+    </td>
+    <td>
+      <strong>Cantidad</strong>
+    </td>
+    <td>
+      <strong>Sub Total</strong> 
+    </td>
+    <td>
+      <strong>Acción</strong>
+    </td>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let producto of tempPedido; index as i">
+      <td>
+        {{producto.producto.presentacion}}
+      </td>
+      <td>
+        C${{producto.producto.precioUnitario}}
+      </td>
+      <td>
+        <input required style="text-align:right; width:50px;" onChange="(event) => { actCant(producto) }" [(ngModel)]="producto.cantidad"  placeholder="Cantidad requerida" name="cantidad" type="number">
+      </td>
+      <td>
+        {{actCant(producto)}}
+      </td>
+      <td>
+          <a  (click)="removeItemTempOrder(producto)">
+              <mat-icon style="cursor:pointer">delete</mat-icon>
+            </a>
+      </td>
+    </tr>
+   
+  </tbody>
+  <h5 style="left:200px">Total:<strong>C$ {{getTotalCost()}}</strong> </h5>
+</table>
+
+</div>
+<div class="input">
+    <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Dirección" [(ngModel)]="direccion" name="direccion" required></textarea>
+      </mat-form-field><br>
+<button mat-raised-button (click)="guardarPedido()" color="primary">Enviar</button>
+</div>
+
+</div>
+<ul class="collection">
+  <!--
+    <li *ngFor="let producto of tempPedido; index as i">
+      <span>Nombre:<strong>{{producto.producto.presentacion}}</strong> Precio: <strong>C${{producto.producto.precioUnitario}}</strong></span><td>
+      <input onChange="(event) => { actCant(producto) }" [(ngModel)]="producto.cantidad"  placeholder="Cantidad requerida" name="cantidad" type="number"></td>
+      <span>{{actCant(producto)}}</span>
+      <a  (click)="removeItemTempOrder(producto)">
+        <mat-icon style="cursor:pointer">delete</mat-icon>
+      </a>
+    </li>
+    -->
+    
+  </ul>
+ 
+<h1>guardar</h1>
 <form class="example-form">
   <mat-form-field class="example-full-width">
     <input matInput placeholder="numero de pedido" value="">

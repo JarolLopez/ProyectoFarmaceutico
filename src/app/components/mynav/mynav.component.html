@@ -41,8 +41,10 @@
       <h2 class="titulo">Farmacia FarmaAhorro</h2>
   
       <ng-container *ngIf="this.isAuth; else elseTemplate">
+          <a class="obtenerC" >{{obtenerCorreo()}}</a>
         <a mat-list-item (click)="this.logOut()">
-          <mat-icon class="Init" matTooltip="Cerrar sesión">account_circle</mat-icon>
+            <!--<h6 id="obtenerC">{{obtenerCorreo()}}</h6>-->
+            <mat-icon class="Init" matTooltip="Cerrar sesión">account_circle</mat-icon>
         </a>
       </ng-container>
       <ng-template #elseTemplate>

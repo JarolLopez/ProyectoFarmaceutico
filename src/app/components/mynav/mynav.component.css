@@ -3,6 +3,12 @@
    border-top: 1px solid;
    border-left: 0px double;
 }
+.obtenerC
+{
+  margin-bottom:  10px;
+  text-align: left;
+  color: black;
+}
 
 .sidenav {
   width: 200px;
@@ -64,7 +70,7 @@ padding: 0 14px;
 .account_circle{
   height: 144px;
   width: 50%;
-    margin: 0 auto;
+    margin: 1 auto;
     background-color: blue;
 }
 .Span{
@@ -84,7 +90,7 @@ padding: 0 14px;
 .Init{
   color:  #E0E0E0;
   font-size: 40px;
-  padding: 0 14px;
+  padding: 2 14px;
 }
 
 .listBord{
@@ -99,7 +105,7 @@ padding: 0 14px;
 
 .titulo{
  text-align:center;
- margin-right: 40%;
+ margin-right: 50%;
  color: #E0E0E0;
 
  

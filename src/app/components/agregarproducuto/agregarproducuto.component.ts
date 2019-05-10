@@ -19,6 +19,7 @@ import { ProductoService } from 'src/app/servicio/producto.service';
 export class AgregarproducutoComponent implements OnInit {
   dataSource: any;
   public presentacion;
+  public direccion:string;
 
   constructor(
     public dataProducto: ProductoService,public dialog: MatDialog, public dataPresentacion: PresentacionService) { }

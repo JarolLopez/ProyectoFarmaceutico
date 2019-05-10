@@ -29,4 +29,10 @@ export class PedidoService {
       });
     }));
   }
+
+  guardarPedido(pedido:pedidoInterface){
+
+   this.afs.collection('pedido').add(pedido);
+  
+  }
 }

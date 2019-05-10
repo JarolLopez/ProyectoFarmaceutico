@@ -11,6 +11,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {productoInterface} from '../../modelos/producto.models';
 import {ProductoService} from '../../servicio/producto.service';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -28,7 +29,7 @@ export class ProductosComponent implements OnInit {
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-  constructor(public dialog: MatDialog, private dataProducto: ProductoService) { }
+  constructor(public dialog: MatDialog, private dataProducto: ProductoService, public route:Router) { }
     private productos: productoInterface[];
 
   openDialog() {
@@ -43,6 +44,16 @@ export class ProductosComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    if (localStorage.getItem('rol')==='admin')
+    {
+
+    }
+    else
+    {
+      this.route.navigate(['/']);
+    }
+
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
     this.getListarProductos();

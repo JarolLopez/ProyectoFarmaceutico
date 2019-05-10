@@ -17,7 +17,6 @@ export class ComentariosComponent implements OnInit {
 
    public emailAct: string = auth().currentUser.email;
  
-
   
   constructor(public service: ComentarioService,
     private firestore: AngularFirestore,

@@ -18,21 +18,22 @@ import { GuardarpedidoComponent } from './components/guardarpedido/guardarpedido
 
 const routes: Routes = [
   {path: '', component: InicioComponent},
-  {path: 'inicio', component: InicioComponent, canActivate:[AuthguardarService]},
+  {path: 'inicio', component: InicioComponent,},
   {path: 'registrarse', component: RegistrarseComponent},
   {path: 'login', component: LoginComponent},
   {path: 'contacto', component: ContactoComponent , canActivate:[AuthguardarService]},
-  {path: 'productos', component: ProductosComponent},
+  {path: 'productos', component: ProductosComponent, canActivate:[AuthguardarService]},
   {path: 'pedidos', component: PedidosComponent},
   {path: 'noticias', component: NoticiasComponent},
   {path: 'ventas', component: VentasComponent},
   {path: 'comentarios', component: ComentariosComponent},
   {path: 'usuarios', component: UsuariosComponent},
   {path: 'informes', component: InformesComponent},
-  {path: '**', component: InicioComponent},
+  {path: 'guardarpedido', component: GuardarpedidoComponent},
   {path: 'agregarproducuto', component: AgregarproducutoComponent},
   {path: 'presentacion', component: PresentacionComponent},
-  {path: 'guardarpedido', component: GuardarpedidoComponent}
+  {path: '**', component: InicioComponent}
+  
 ];
 
 @NgModule({

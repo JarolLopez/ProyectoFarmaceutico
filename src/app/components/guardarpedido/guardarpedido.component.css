@@ -1,0 +1,36 @@
+.micard{
+    
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+   
+    
+    
+}
+.myButton{
+    padding: 1rem;
+    margin: 5px;
+    width: 30%;
+}
+.table{
+  margin:30px;
+ width: 600px;
+ 
+}
+
+.example-full-width {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+.input {
+    width: 350px;
+    display: block;
+}
+.row{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(1,auto);
+}
