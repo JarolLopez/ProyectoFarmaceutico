@@ -27,7 +27,6 @@ export class ComentarioListComponent implements OnInit {
     if(localStorage.getItem('rol')==='admin'){
       this.admin=true;
     }
-   
     this.service.getComentario().subscribe(actionArray => {
       this.list = actionArray.map(item => {
         return {

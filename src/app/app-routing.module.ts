@@ -29,7 +29,7 @@ const routes: Routes = [
   {path: 'comentarios', component: ComentariosComponent},
   {path: 'usuarios', component: UsuariosComponent},
   {path: 'informes', component: InformesComponent},
-  {path: 'guardarpedido', component: GuardarpedidoComponent},
+  {path: 'guardarpedido', component: GuardarpedidoComponent,canActivate:[AuthguardarService]},
   {path: 'agregarproducuto', component: AgregarproducutoComponent},
   {path: 'presentacion', component: PresentacionComponent},
   {path: '**', component: InicioComponent}
