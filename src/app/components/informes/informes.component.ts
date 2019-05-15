@@ -22,6 +22,7 @@ export class InformesComponent implements OnInit {
   dataSource = new MatTableDataSource<productoInterface>();
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -44,6 +45,7 @@ export class InformesComponent implements OnInit {
 
   ngOnInit() {
     this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
     this.getListarProductos();
   }
 

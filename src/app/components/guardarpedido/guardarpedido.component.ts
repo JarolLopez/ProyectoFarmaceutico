@@ -4,6 +4,7 @@ import {ListaDetalle} from './../../modelos/detalleP.model';
 import {PedidoService}from './../../servicio/pedido.service';
 import {pedidoInterface} from './../../modelos/pedido.models';
 import { auth } from 'firebase';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-guardarpedido',
@@ -20,6 +21,8 @@ export class GuardarpedidoComponent implements OnInit {
   tempPedido=[];
   public lista:ListaDetalle={};
   public pedido:pedidoInterface={};
+
+  //public detallePedidoArreglo=[];
  
 
   constructor(private dataProducto: ProductoService, public pedidoservice:PedidoService) { }
@@ -42,33 +45,29 @@ export class GuardarpedidoComponent implements OnInit {
   }
 
   onAddProduct(producto){
-
     let lista:ListaDetalle={};
-    
-    
-    lista.cantidad=1;
+   
+    lista.cantidadP=1;
     lista.producto=producto;
     //producto.push(lista)
   
    // this.tempPedido.push(lista);
     this.tempPedido.push(lista);
-     console.log(lista);
+   
   }
 
   actCant(producto) {
     
-   return this.subTotal = (producto.producto.precioUnitario * producto.cantidad)
+   return this.subTotal = (producto.producto.precioUnitario * producto.cantidadP)
  
   }
 
  
 
   getTotalCost() {
-    return this.tempPedido.map(t => t.producto.precioUnitario*t.cantidad).reduce((acc, value) => acc + value, 0);
+    return this.tempPedido.map(t => t.producto.precioUnitario*t.cantidadP).reduce((acc, value) => acc + value, 0);
   }
   
-
-
   removeItemTempOrder = (lista) => {
     let index = this.tempPedido.indexOf(lista);
     if (index > -1)
@@ -76,32 +75,31 @@ export class GuardarpedidoComponent implements OnInit {
       console.log(this.tempPedido[index]);
       /*.tempPedido[index].subTotal*/;
       this.tempPedido.splice(index, 1);
-     
     }
-
- 
-   
   }
 
   guardarPedido(){
+
     if(auth().currentUser===null){
       alert('Inicie sesión')
     }
     else{
-      
-      
-        this.pedidoservice.selectedPedido.usuario=auth().currentUser.email;
+    this.pedidoservice.selectedPedido.usuario=auth().currentUser.email;
     this.pedidoservice.selectedPedido.fechaPedido=new Date;
     this.pedidoservice.selectedPedido.entregado=false;
     this.pedidoservice.selectedPedido.total=this.getTotalCost();
     this.pedidoservice.selectedPedido.direccion=this.direccion;
    // console.log('Datos a guardar',this.pedidoservice.selectedPedido);
-    this.pedidoservice.guardarPedido(this.pedidoservice.selectedPedido);
-  
-    
+   
+    this.pedidoservice.guardarPedido(this.pedidoservice.selectedPedido,this.tempPedido);
+    alert('Pedido enviado');
+    this.tempPedido =[];
+    this.direccion='';
+
+    //console.log(this.pedidoservice.selectedPedido.id)
     
   }
     
-    }
+ }
 
 }

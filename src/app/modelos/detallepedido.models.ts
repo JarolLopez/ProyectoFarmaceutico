@@ -1,3 +1,4 @@
+import {productoInterface} from './producto.models'
 export interface detallepedidoInterface {
     id?: string;
     numeroLote?: string;
@@ -5,4 +6,5 @@ export interface detallepedidoInterface {
     presentacion?: string;
     cantidad?: number;
     entregado?: boolean;
+    producto?:productoInterface;
 }

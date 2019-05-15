@@ -47,10 +47,12 @@ export class DetallePedidoService {
       const ventaCollection = this.afs.collection<ventaInterface>('venta');
       let venta:ventaInterface = {};
       venta.id = pedidoId;
-      venta.numeroVenta = pedido.numeroPedido;
+      venta.numeroVenta = pedidoId;
       venta.fechaVenta = pedido.fechaPedido;
+      venta.fechaEntrega=new Date();
       venta.usuario = pedido.usuario;
       venta.direccion = pedido.direccion;
+      venta.total=pedido.total;
       ventaCollection.doc(pedidoId).set(venta)
       .then(() => {
         console.log('Guardado!!!!!')

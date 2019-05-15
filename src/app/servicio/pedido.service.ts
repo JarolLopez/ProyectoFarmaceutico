@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {AngularFirestore, AngularFirestoreCollection,AngularFirestoreDocument} from '@angular/fire/firestore';
 import {pedidoInterface} from '../modelos/pedido.models';
+import {detallepedidoInterface} from './../modelos/detallepedido.models';
 import {Observable} from 'rxjs/internal/Observable';
 import {map} from 'rxjs/operators';
 
@@ -17,6 +18,11 @@ export class PedidoService {
   public selectedPedido: pedidoInterface = {
     id: null,
   };
+  public selectedDetallePedido: detallepedidoInterface={
+    
+  }
+
+  public idPedido;
 
   obtenerPedido(){
     this.pedidoColeccion = this.afs.collection<pedidoInterface>('pedido');
@@ -30,9 +36,18 @@ export class PedidoService {
     }));
   }
 
-  guardarPedido(pedido:pedidoInterface){
-
-   this.afs.collection('pedido').add(pedido);
+  guardarPedido(pedido:pedidoInterface,detalle=[]){
+   
+   this.afs.collection('pedido').add(pedido).then(doc=>{
+    this.idPedido=doc.id,
+    console.log('IdPediGuardP',this.idPedido),
+    detalle.forEach((item) => {
+      console.log('IdPedi',this.idPedido),
+      this.afs.collection('pedido').doc(this.idPedido).collection('detallePedido').add({cantidadP: item.cantidadP, ...item.producto})
+    })
+  
+   })
   
   }
+
 }

@@ -25,7 +25,12 @@
 
   <ng-container matColumnDef="cantidad">
     <th mat-header-cell *matHeaderCellDef>Cantidad</th>
-    <td mat-cell *matCellDef="let element"> {{element.cantidad}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.cantidadP}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="subTotal">
+    <th mat-header-cell *matHeaderCellDef>Sub Total</th>
+    <td mat-cell *matCellDef="let element"> {{element.cantidadP * element.precioUnitario}} </td>
   </ng-container>
 
   <!--<ng-container matColumnDef="entregado">

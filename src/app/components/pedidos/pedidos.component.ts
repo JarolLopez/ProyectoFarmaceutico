@@ -16,11 +16,12 @@ import {PedidoService} from '../../servicio/pedido.service';
 })
 
 export class PedidosComponent implements OnInit {
-  displayedColumns: string[] = ['numeroPedido', 'usuario', 'fechaPedido', 'direccion','verPedido'];
+  displayedColumns: string[] = ['usuario', 'fechaPedido', 'direccion','total','verPedido'];
   dataSource = new MatTableDataSource<pedidoInterface>();
 
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
@@ -31,6 +32,7 @@ export class PedidosComponent implements OnInit {
 
   ngOnInit() {
     this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
     this.getListarPedido();
   }
   getListarPedido(){

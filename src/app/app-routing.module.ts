@@ -15,6 +15,8 @@ import { VentasComponent } from './components/ventas/ventas.component';
 import { AuthguardarService } from './servicio/authguardar.service';
 import { InformesComponent } from './components/informes/informes.component';
 import { GuardarpedidoComponent } from './components/guardarpedido/guardarpedido.component';
+import { EstadisticasComponent } from './estadisticas/estadisticas.component';
+import { EstadisticasdosComponent } from './estadisticasdos/estadisticasdos.component';
 
 const routes: Routes = [
   {path: '', component: InicioComponent},
@@ -32,6 +34,8 @@ const routes: Routes = [
   {path: 'guardarpedido', component: GuardarpedidoComponent,canActivate:[AuthguardarService]},
   {path: 'agregarproducuto', component: AgregarproducutoComponent},
   {path: 'presentacion', component: PresentacionComponent},
+  {path: 'estadisticas', component: EstadisticasComponent,canActivate:[AuthguardarService]},
+  {path: 'estadisticasdos', component: EstadisticasdosComponent,canActivate:[AuthguardarService]},
   {path: '**', component: InicioComponent}
   
 ];

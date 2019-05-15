@@ -9,6 +9,7 @@ import { detallepedidoInterface } from '../../modelos/detallepedido.models';
 import { pedidoInterface } from '../../modelos/pedido.models';
 import { DetallePedidoService } from '../../servicio/detalle-pedido.service';
 import { PedidoService } from '../../servicio/pedido.service';
+import {ListaDetalle} from './../../modelos/detalleP.model'
 
 @Component({
   selector: 'app-detallepedido',
@@ -17,7 +18,7 @@ import { PedidoService } from '../../servicio/pedido.service';
 })
 export class DetallepedidoComponent implements OnInit {
 
-  displayedColumns: string[] = ['numeroLote', 'presentacion', 'precioUnitario', 'cantidad'];
+  displayedColumns: string[] = ['numeroLote', 'presentacion', 'precioUnitario', 'cantidad','subTotal'];
   dataSource = new MatTableDataSource<detallepedidoInterface>();
 
 
@@ -42,7 +43,9 @@ export class DetallepedidoComponent implements OnInit {
     this.dataDetallePedido.obtenerPedido(pedidoId)
     .subscribe(pedidos => {
       console.log(pedidos);
-      this.dataSource.data = pedidos;
+      this.dataSource.data = pedidos as detallepedidoInterface[];
+      console.log('Arreglo',pedidos)
+     // this.dataSource.data=pedidos['producto'] as detallepedidoInterface[];
     })
   }
 

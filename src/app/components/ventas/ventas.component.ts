@@ -15,7 +15,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./ventas.component.css']
 })
 export class VentasComponent implements OnInit {
-  displayedColumns: string[] = ['descripcionProducto','codigoProducto', 'cantidad', 'precioUnitario', 'PrecioTotal', 'fechaVenta', 'direccion'];
+  displayedColumns: string[] = ['usuario','fechaVenta', 'fechaEntrega', 'total', 'direccion'];
   dataSource = new MatTableDataSource<ventasInterface>();
 
   @ViewChild(MatPaginator) paginator: MatPaginator;

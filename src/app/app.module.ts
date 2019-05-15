@@ -17,6 +17,7 @@ import {AngularFireAuth} from 'angularfire2/auth';
 import {environment} from '../environments/environment';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatSortModule} from '@angular/material/sort';
+import { ChartsModule } from 'ng2-charts';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -49,6 +50,8 @@ import { NoticiasListComponent } from './components/noticias-list/noticias-list.
 import { DetallepedidoComponent } from './components/detallepedido/detallepedido.component';
 import { InformesComponent } from './components/informes/informes.component';
 import { GuardarpedidoComponent } from './components/guardarpedido/guardarpedido.component';
+import { EstadisticasComponent } from './estadisticas/estadisticas.component';
+import { EstadisticasdosComponent } from './estadisticasdos/estadisticasdos.component';
 
 
 
@@ -74,6 +77,8 @@ import { GuardarpedidoComponent } from './components/guardarpedido/guardarpedido
     DetallepedidoComponent,
     InformesComponent,
     GuardarpedidoComponent,
+    EstadisticasComponent,
+    EstadisticasdosComponent,
 
  
   
@@ -116,7 +121,8 @@ import { GuardarpedidoComponent } from './components/guardarpedido/guardarpedido
     MatGridListModule,
     ScrollingModule,
     MatGridListModule,
-    MatSortModule
+    MatSortModule,
+    ChartsModule
   
  
   ],

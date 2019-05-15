@@ -11,14 +11,15 @@
       </a>
 
       <ng-container >
-        <a mat-list-item *ngIf="this.isAdmin" class="listBord" routerLink="/productos"><mat-icon class="color">local_parking</mat-icon>Productos</a>
-        <a mat-list-item *ngIf="this.isAdmin" class="listBord" routerLink="/comentarios"><mat-icon class="color">store</mat-icon>Comentarios</a>
+        <a mat-list-item *ngIf="this.isAdmin" class="listBord" routerLink="/productos"><mat-icon class="color">healing</mat-icon>Productos</a>
+        <!--<a mat-list-item *ngIf="this.isAdmin" class="listBord" routerLink="/comentarios"><mat-icon class="color">store</mat-icon>Comentarios</a>-->
         <a mat-list-item *ngIf="this.isAdmin" class="listBord" routerLink="/noticias"><mat-icon class="color">keyboard_hide</mat-icon>noticias</a>
-        <a mat-list-item *ngIf="this.isAdmin" class="listBord" routerLink="/pedidos"><mat-icon class="color">healing</mat-icon>Pedidos</a>
+        <a mat-list-item *ngIf="this.isAdmin" class="listBord" routerLink="/pedidos"><mat-icon class="color">local_parking</mat-icon>Pedidos</a>
         <a mat-list-item *ngIf="this.isAdmin" class="listBord" routerLink="/ventas"><mat-icon class="color">attach_money</mat-icon>Ventas</a>
         <!--<a mat-list-item class="listBord" routerLink="/usuarios"><mat-icon class="color">person_pin</mat-icon>Usuarios</a>-->
-        <a mat-list-item class="listBord" routerLink="/guardarpedido"><mat-icon class="color">receipt</mat-icon>Realizar Pedido</a>
-        <a mat-list-item *ngIf="this.isAdmin" class="listBord" routerLink="/informes"><mat-icon class="color">receipt</mat-icon>informeproductos</a>
+        <a mat-list-item class="listBord" routerLink="/guardarpedido"><mat-icon class="color">send</mat-icon>Realizar Pedido</a>
+        <a mat-list-item *ngIf="this.isAdmin" class="listBord" routerLink="/informes"><mat-icon class="color">receipt</mat-icon>Informe Productos</a>
+        <a mat-list-item *ngIf="this.isAdmin" class="listBord" routerLink="/estadisticas"><mat-icon class="color">equalizer</mat-icon>Estadisticas</a>
       </ng-container>
 
     </mat-nav-list>

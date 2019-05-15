@@ -1,41 +1,41 @@
 <br>
-<button matTooltip="Agregar nuevo producto" class="buttom1"  color="primary" mat-raised-button (click)="openDialog()"
-><mat-icon class="buttom">add</mat-icon>Productos</button>
+<!--<button matTooltip="Agregar nuevo producto" class="buttom1"  color="primary" mat-raised-button (click)="openDialog()"
+><mat-icon class="buttom">add</mat-icon>Productos</button>-->
 
 <mat-form-field>
   <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtrar resultados">
 </mat-form-field>
 
 
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" >
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" >
     
   <!-- Position Column -->
   <ng-container matColumnDef="presentacion">
-    <th mat-header-cell *matHeaderCellDef> Presentación </th>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Presentación </th>
     <td mat-cell *matCellDef="let element"> {{element.presentacion}} </td>
   </ng-container>
 
   <!-- Position Column -->
   <ng-container matColumnDef="numeroLote">
-    <th mat-header-cell *matHeaderCellDef> Lote </th>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Lote </th>
     <td mat-cell *matCellDef="let element"> {{element.numeroLote}} </td>
   </ng-container>
 
   <!-- Name Column -->
   <ng-container matColumnDef="precioUnitario">
-    <th mat-header-cell *matHeaderCellDef> Precio </th>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Precio </th>
     <td mat-cell *matCellDef="let element"> {{element.precioUnitario}} </td>
   </ng-container>
 
   <!-- Weight Column -->
   <ng-container matColumnDef="cantidad">
-    <th mat-header-cell *matHeaderCellDef> Existencia </th>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Existencia </th>
     <td mat-cell *matCellDef="let element"> {{element.cantidad}} </td>
   </ng-container>
 
   <!-- Symbol Column -->
   <ng-container matColumnDef="fechaVencimiento">
-    <th mat-header-cell *matHeaderCellDef> Vence </th>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Vence </th>
     <td mat-cell *matCellDef="let element"> {{element.fechaVencimiento.toDate()| date: 'dd/MM/yyyy'}} </td>
   </ng-container>
  
