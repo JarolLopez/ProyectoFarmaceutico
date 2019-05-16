@@ -1,18 +1,18 @@
 <div>
-  <h5 style="text-align:center">Ventas</h5>
-    <div>
-      <div style="display: block">
-        <canvas baseChart
-          [datasets]="barChartData"
-          [labels]="barChartLabels"
-          [options]="barChartOptions"
-          [plugins]="barChartPlugins"
-          [legend]="barChartLegend"
-          [chartType]="barChartType">
-        </canvas>
-      </div>
-      <button mat-button mat-raised-button color="primary" (click)="randomize()">Update</button>
+  <h5>Ventas</h5>
+  <div>
+    <div style="display: block">
+      <canvas baseChart
+        [datasets]="barChartData"
+        [labels]="barChartLabels"
+        [options]="barChartOptions"
+        [plugins]="barChartPlugins"
+        [legend]="barChartLegend"
+        [chartType]="barChartType">
+      </canvas>
     </div>
+    <button mat-button mat-raised-button color="primary" (click)="randomize()">Update</button>
   </div>
+</div>
   <br>
   <app-estadisticasdos></app-estadisticasdos>
